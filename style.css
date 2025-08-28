@@ -3,18 +3,29 @@
   --text:#826747;
   --accent:#969F6E;
   --panel:#f7efe2;
-  --panel-border:#826747;
   --max:1080px;
-  --header-h:180px;
+  --content: 65vw;    /* WIDTH of the centered content (make smaller = more vine space) */
+  --header-h: 180px;  /* height of your banner area; tweak if your header image is taller */
+  --panel-border: #826747; /* brown line color (already in your file) */
 }
+
+/* Reset */
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
-body{font-family:Nunito,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:var(--bg);line-height:1.6}
+body{
+  font-family:Nunito,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.6;
+}
 h1,h2,h3{font-family:"Playfair Display",serif;color:var(--text)}
-a{color:var(--text);text-decoration:none} a:hover{text-decoration:underline}
-.container{width:min(var(--max),92%);margin:0 auto}
+a{color:var(--text);text-decoration:none}
+a:hover{text-decoration:underline}
+.container { width: min(var(--max), 65%); margin: 0 auto; }
+
+/* Header and nav */
 .site-header{position:sticky;top:0;z-index:100;background:var(--accent)}
-.full-header{display:block;width:100%;height:auto;max-height:180px;object-fit:contain;margin:0;line-height:0}
+.full-header{display:block;width:100%;height:auto;max-height:165px;object-fit:contain;margin:0;line-height:0}
 .main-nav{
   display:flex;justify-content:center;gap:clamp(28px,8vw,120px);
   background:var(--panel);
@@ -22,13 +33,63 @@ a{color:var(--text);text-decoration:none} a:hover{text-decoration:underline}
   border-bottom:2px solid var(--panel-border);
   padding:clamp(8px,1.6vw,12px) 0;margin:0;position:relative;z-index:101;
 }
-.main-nav a{font:800 clamp(16px,2.2vw,24px)/1 Nunito,system-ui,sans-serif}
-.announcement{margin:6px auto 8px}
-.pill-image{position:relative;width:min(600px,90%);margin:0 auto}
-.pill-image img{display:block;width:100%;height:auto}
-.pill-image .learn-link{position:absolute;bottom:28%;left:50%;transform:translateX(-50%);font-weight:700;font-size:1rem;color:var(--text);text-decoration:none}
+.main-nav a{font:800 clamp(16px,2.2vw,24px)/1 Nunito,system-ui,sans-serif;color:var(--text);text-decoration:none;}
+.main-nav a:hover{text-decoration:underline}
+
+/* Side vines */
+body::before,
+body::after{
+  content:"";
+  position:fixed;
+  top:var(--header-h);
+  bottom:0;
+  width:calc((100vw - min(var(--max), var(--content))) / 2); /* NO extra subtraction */
+  background:url("./assets/vines.png") no-repeat top center;
+  background-size:cover;
+  pointer-events:none;
+  z-index:0;
+}
+body::before{ left:0; }
+body::after { right:0; transform:scaleX(-1); }
+
+/* Brown vertical lines at vine/content boundary */
+.container::before,
+.container::after{
+  content:"";
+  position:fixed;
+  top:var(--header-h);
+  bottom:0;
+  width:2px;
+  background:var(--panel-border);
+  z-index:1;
+}
+.container::before{
+  left:calc((100vw - min(var(--max), var(--content))) / 2);
+}
+.container::after{
+  right:calc((100vw - min(var(--max), var(--content))) / 2);
+}
+
+/* Announcement image */
+.announcement{margin:6px auto 8px;}
+.pill-image{position:relative;width:min(600px,90%);margin:0 auto;}
+.pill-image img{display:block;width:100%;height:auto;}
+.pill-image .learn-link{
+  position:absolute;bottom:30%;left:50%;transform:translateX(-50%);
+  font-weight:700;font-size:1rem;color:var(--text);text-decoration:none;
+}
 .pill-image .learn-link:hover{text-decoration:underline}
+
+/* Hero */
+.framed{background:var(--bg);padding:18px 0 26px;position:relative;width:min(var(--max),92%);margin:6px auto 28px}
+.eyebrow{text-align:center;font-weight:600;font-size:clamp(18px,2.2vw,28px);margin:1.2rem 0 .2rem;letter-spacing:.04em}
+.headline{text-align:center;font-weight:800;text-transform:uppercase;font-size:clamp(26px,5vw,56px);margin:0 0 12px}
+.headline span{font-weight:800;font-style:italic;text-transform:none}
+
+/* Collections */
+.collections{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,2.4vw,22px);width:min(980px,94%);margin:12px auto 0}
+.card{position:relative;display:flex;align-items:flex-end;justify-content:center;min-height:260px;background:#cbd3bd}
+.card-title{width:100%;text-align:center;padding:.8rem 0;background:rgba(255,255,255,.7);font-family:"Playfair Display",serif;font-weight:700;letter-spacing:.06em}
+
+/* Footer */
 .site-footer{border-top:1px solid #e5d8c8;padding:1rem 0;color:#9b8a74;background:var(--bg);text-align:center}
-.site-footer .social-links{margin-top:8px;display:flex;gap:16px;justify-content:center}
-.site-footer .social-links img{width:24px;height:24px;display:block;transition:transform .2s ease}
-.site-footer .social-links img:hover{transform:scale(1.2)}
