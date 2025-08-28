@@ -79,6 +79,16 @@ a:hover{text-decoration:underline}
    CONTACT PAGE STYLES
    ============================ */
 
+.contact-banner {
+  display: block;
+  max-width: 500px;   /* adjust width */
+  width: 100%;
+  height: auto;
+  margin: 0 auto 24px; /* centers it + space below */
+}
+<h1 class="sr-only">Contact Us</h1>
+<img src="./assets/contact-banner.png" alt="Contact Us" class="contact-banner">
+
 /* Layout wrapper */
 .contact-wrap {
   max-width: 900px;
