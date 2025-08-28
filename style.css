@@ -51,6 +51,37 @@ a:hover{text-decoration:underline}
   height: auto;
   margin: 0 auto;
 }
+/* FAQ layout */
+.faq-wrap {
+  max-width: 900px;       /* same as About page width */
+  margin: 0 auto;
+  padding: 16px;
+  text-align: center;
+}
+
+.faq-wrap .faq-hero {
+  display: block;
+  max-width: 900px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto 20px;    /* space below FAQ image */
+}
+
+.faq-wrap .image-button img {
+  display: block;
+  max-width: 260px;       /* adjust button size */
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+/* ✨ Hover effect for the button */
+.faq-wrap .image-button img:hover {
+  transform: scale(1.05); /* grows slightly */
+  opacity: 0.9;           /* subtle dim */
+  cursor: pointer;
+}
 
 /* Side vines */
 body::before,
