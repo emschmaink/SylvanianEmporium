@@ -4,54 +4,46 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sylvanian Emporium — Home</title>
+  <meta name="description" content="Welcome to Sylvanian Emporium. Shop all of our collections: notebooks, bookmarks, and keychains." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Nunito:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
+
   <header class="site-header">
-    <img class="full-header" src="./assets/header.png" alt="Sylvanian Emporium">
-    <nav class="main-nav">
-      <a href="./index.html" aria-current="page">Home</a>
-      <a href="#shop">Shop</a>
-      <a href="#about">About</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+  <img class="full-header" src="./assets/header.png" alt="Sylvanian Emporium">
+  <nav class="main-nav">
+    <a href="./index.html" aria-current="page">Home</a>
+    <a href="#shop">Shop</a>
+    <a href="#about">About</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
   <main id="main">
-    <section class="announcement container">
-      <div class="pill-image">
-        <img src="./assets/announcement.png" alt="Your order could make an impact!">
-        <a href="#" class="learn-link">LEARN MORE</a>
-      </div>
-    </section>
+    <div class="side-vines left" aria-hidden="true"></div>
+    <div class="side-vines right" aria-hidden="true"></div>
 
-    <section class="hero container framed">
-      <h2 class="eyebrow">We’re so happy to see you!</h2>
-      <h2 class="headline">Welcome to Sylvanian Emporium</h2>
-    </section>
+    <section class="announcement container">
+  <div class="pill-image">
+    <img src="./assets/announcement.png" alt="Your order could make an impact!">
+    <a href="#" class="learn-link">LEARN MORE</a>
+  </div>
+</section>
+
   </main>
 
   <footer class="site-footer">
     <div class="container">
       <small>© <span id="year"></span> Sylvanian Emporium</small>
-      <div class="social-links">
-        <a href="https://www.etsy.com/shop/YOURSHOP" target="_blank" rel="noopener">
-          <img src="./assets/icons/etsy.svg" alt="Etsy">
-        </a>
-        <a href="https://instagram.com/YOURNAME" target="_blank" rel="noopener">
-          <img src="./assets/icons/instagram.svg" alt="Instagram">
-        </a>
-        <a href="https://facebook.com/YOURNAME" target="_blank" rel="noopener">
-          <img src="./assets/icons/facebook.svg" alt="Facebook">
-        </a>
-        <a href="https://discord.gg/YOURINVITECODE" target="_blank" rel="noopener">
-          <img src="./assets/icons/discord.svg" alt="Discord">
-        </a>
-      </div>
     </div>
   </footer>
 
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
