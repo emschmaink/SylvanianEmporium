@@ -38,10 +38,10 @@ a:hover{text-decoration:underline}
 
 .about-img img {
   display: block;
-  max-width: 900px; /* adjust number to whatever size feels right */
-  width: 100%;
+  max-width: 900px;   /* adjust this number to make it bigger/smaller */
+  width: 100%;        /* lets it shrink on phones */
   height: auto;
-  margin: 0 auto;
+  margin: 0 auto;     /* centers it horizontally */
 }
 
 /* Side vines */
