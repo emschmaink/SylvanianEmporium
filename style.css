@@ -161,21 +161,21 @@ a:hover{text-decoration:underline}
   background: transparent;
   border: 0;
   padding: 0;
-  display: inline-block;
-  line-height: 0;
+  display: block;       /* was inline-block */
+  margin: 0 auto;       /* centers the button horizontally */
   cursor: pointer;
+  line-height: 0;
 }
 
 .send-btn img {
   display: block;
-  max-width: 260px;   /* adjust button size */
+  max-width: 260px;     /* adjust size */
   width: 100%;
   height: auto;
-  margin: 0 auto;
+  margin: 0 auto;       /* keeps the image itself centered */
   transition: transform 0.15s ease, opacity 0.15s ease, box-shadow 0.2s ease;
 }
 
-/* Hover/active effects — SAME as FAQ button */
 .send-btn:hover img {
   transform: scale(1.05);
   opacity: 0.9;
