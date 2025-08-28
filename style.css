@@ -36,6 +36,14 @@ a:hover{text-decoration:underline}
 .main-nav a{font:800 clamp(16px,2.2vw,24px)/1 Nunito,system-ui,sans-serif;color:var(--text);text-decoration:none;}
 .main-nav a:hover{text-decoration:underline}
 
+.about-img img {
+  display: block;
+  max-width: 900px; /* adjust number to whatever size feels right */
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
 /* Side vines */
 body::before,
 body::after{
