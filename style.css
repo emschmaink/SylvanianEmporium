@@ -75,7 +75,11 @@ a:hover{text-decoration:underline}
   opacity: 0.9;           /* subtle dim */
   cursor: pointer;
 }
-/* Contact layout (consistent with About/FAQ) */
+/* ============================
+   CONTACT PAGE STYLES
+   ============================ */
+
+/* Layout wrapper */
 .contact-wrap {
   max-width: 900px;
   margin: 0 auto;
@@ -83,15 +87,16 @@ a:hover{text-decoration:underline}
   text-align: center;
 }
 
+/* Hero image (if using a single contact-page image) */
 .contact-hero {
   display: block;
-  max-width: 900px;  /* adjust this to taste */
+  max-width: 900px;  /* adjust as needed */
   width: 100%;
   height: auto;
   margin: 0 auto;
 }
 
-/* Optional image button under contact image */
+/* Optional "image button" below contact hero */
 .contact-wrap .image-button img {
   display: block;
   max-width: 260px;   /* button size */
@@ -106,10 +111,10 @@ a:hover{text-decoration:underline}
   cursor: pointer;
 }
 
-/* If you’re using the form version */
+/* Contact form container */
 .contact-form {
   text-align: left;
-  max-width: 700px;    /* narrower than the page for comfy reading */
+  max-width: 700px;    /* narrower than full width for comfy reading */
   margin: 0 auto;
 }
 .contact-form label {
@@ -128,15 +133,44 @@ a:hover{text-decoration:underline}
   color: var(--text);
   font: 600 16px/1.4 Nunito, system-ui, sans-serif;
 }
-.contact-form button.btn {
+
+/* visually-hidden text for accessibility (used inside custom button) */
+.sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Custom SEND button using your image */
+.send-btn {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  padding: 0;
   display: inline-block;
-  margin-top: 12px;
-  padding: 10px 22px;
-  border-radius: 999px;
-  border: 2px solid currentColor;
-  background: var(--accent);
-  color: #fff;
-  font-weight: 800;
+  line-height: 0;
+  cursor: pointer;
+  transition: transform .15s ease, filter .15s ease, box-shadow .2s ease;
+}
+.send-btn img {
+  display: block;
+  max-width: 260px;   /* adjust button size */
+  width: 100%;
+  height: auto;
+}
+.send-btn:hover {
+  transform: scale(1.05);
+  filter: brightness(0.98);
+}
+.send-btn:hover img {
+  box-shadow: 0 0 14px rgba(115, 86, 59, 0.7); /* soft brown glow */
+}
+.send-btn:active {
+  transform: scale(0.97);
 }
 
 /* Side vines */
