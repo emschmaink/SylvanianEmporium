@@ -185,6 +185,19 @@ a:hover{text-decoration:underline}
   transform: scale(0.97);
 }
 
+/* Responsive sizing for SEND button */
+@media (max-width: 600px) {
+  .send-btn img {
+    max-width: 200px; /* shrink on small screens */
+  }
+}
+
+@media (max-width: 400px) {
+  .send-btn img {
+    max-width: 160px; /* shrink even more on very narrow screens */
+  }
+}
+
 /* Side vines */
 body::before,
 body::after{
