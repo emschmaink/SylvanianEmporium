@@ -155,7 +155,7 @@ a:hover{text-decoration:underline}
   border: 0;
 }
 
-/* Custom SEND button using your image */
+/* Custom SEND button using image */
 .send-btn {
   appearance: none;
   background: transparent;
@@ -164,22 +164,24 @@ a:hover{text-decoration:underline}
   display: inline-block;
   line-height: 0;
   cursor: pointer;
-  transition: transform .15s ease, filter .15s ease, box-shadow .2s ease;
 }
+
 .send-btn img {
   display: block;
   max-width: 260px;   /* adjust button size */
   width: 100%;
   height: auto;
+  margin: 0 auto;
+  transition: transform 0.15s ease, opacity 0.15s ease, box-shadow 0.2s ease;
 }
-.send-btn:hover {
-  transform: scale(1.05);
-  filter: brightness(0.98);
-}
+
+/* Hover/active effects — SAME as FAQ button */
 .send-btn:hover img {
-  box-shadow: 0 0 14px rgba(115, 86, 59, 0.7); /* soft brown glow */
+  transform: scale(1.05);
+  opacity: 0.9;
+  box-shadow: 0 0 14px rgba(115, 86, 59, 0.7); /* warm brown glow */
 }
-.send-btn:active {
+.send-btn:active img {
   transform: scale(0.97);
 }
 
