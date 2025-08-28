@@ -94,7 +94,7 @@ body::after { right:0; transform:scaleX(-1); }
 /* Footer */
 .site-footer{border-top:1px solid #e5d8c8;padding:1rem 0;color:#9b8a74;background:var(--bg);text-align:center}
 footer .social-icons img {
-  width: 30px;   /* adjust to whatever size you like */
+  width: 15px;   /* adjust to whatever size you like */
   height: auto;  /* keeps aspect ratio */
   margin: 0 8px; /* spacing between icons */
   vertical-align: middle;
