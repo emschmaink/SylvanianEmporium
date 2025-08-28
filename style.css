@@ -81,7 +81,7 @@ a:hover{text-decoration:underline}
 
 .contact-banner {
   display: block;
-  max-width: 500px;   /* adjust width */
+  max-width: 700px;   /* adjust width */
   width: 100%;
   height: auto;
   margin: 0 auto 24px; /* centers it + space below */
