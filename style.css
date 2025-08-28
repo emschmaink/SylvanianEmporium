@@ -44,6 +44,14 @@ a:hover{text-decoration:underline}
   margin: 0 auto;     /* centers it horizontally */
 }
 
+.faq-img img {
+  display: block;
+  max-width: 900px; /* adjust as needed */
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
 /* Side vines */
 body::before,
 body::after{
