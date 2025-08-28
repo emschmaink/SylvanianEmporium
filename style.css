@@ -75,6 +75,36 @@ a:hover{text-decoration:underline}
   opacity: 0.9;           /* subtle dim */
   cursor: pointer;
 }
+/* Ensure FAQ contact button centers & has a base size */
+.faq-wrap .image-button img {
+  display: block;
+  max-width: 260px;   /* same base size as Send button */
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  transition: transform 0.15s ease, opacity 0.15s ease, box-shadow 0.2s ease;
+}
+
+/* Hover effect to match */
+.faq-wrap .image-button img:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+  box-shadow: 0 0 14px rgba(115, 86, 59, 0.7);
+  cursor: pointer;
+}
+
+/* ✅ Responsive sizes (match the Send button breakpoints) */
+@media (max-width: 600px) {
+  .faq-wrap .image-button img {
+    max-width: 200px;
+  }
+}
+@media (max-width: 400px) {
+  .faq-wrap .image-button img {
+    max-width: 160px;
+  }
+}
+
 /* ============================
    CONTACT PAGE STYLES
    ============================ */
@@ -159,7 +189,8 @@ a:hover{text-decoration:underline}
 .send-btn {
   appearance: none;
   background: transparent;
-  border: 0;
+  border: none;
+  outline: none;
   padding: 0;
   display: block;       /* was inline-block */
   margin: 0 auto;       /* centers the button horizontally */
