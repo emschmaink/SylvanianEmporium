@@ -75,6 +75,69 @@ a:hover{text-decoration:underline}
   opacity: 0.9;           /* subtle dim */
   cursor: pointer;
 }
+/* Contact layout (consistent with About/FAQ) */
+.contact-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px;
+  text-align: center;
+}
+
+.contact-hero {
+  display: block;
+  max-width: 900px;  /* adjust this to taste */
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+/* Optional image button under contact image */
+.contact-wrap .image-button img {
+  display: block;
+  max-width: 260px;   /* button size */
+  width: 100%;
+  height: auto;
+  margin: 16px auto 0;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+.contact-wrap .image-button img:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+/* If you’re using the form version */
+.contact-form {
+  text-align: left;
+  max-width: 700px;    /* narrower than the page for comfy reading */
+  margin: 0 auto;
+}
+.contact-form label {
+  display: block;
+  font-weight: 700;
+  margin: 12px 0 6px;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border: 2px solid var(--panel-border);
+  border-radius: 10px;
+  background: var(--panel);
+  color: var(--text);
+  font: 600 16px/1.4 Nunito, system-ui, sans-serif;
+}
+.contact-form button.btn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: 2px solid currentColor;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 800;
+}
 
 /* Side vines */
 body::before,
