@@ -62,7 +62,7 @@ a:hover{text-decoration:underline}
 
 .faq-wrap .image-button img {
   display: block;
-  max-width: 260px;       /* adjust button size */
+  max-width: 200px;       /* adjust button size */
   width: 100%;
   height: auto;
   margin: 0 auto;
@@ -139,7 +139,7 @@ a:hover{text-decoration:underline}
 /* Optional "image button" below contact hero */
 .contact-wrap .image-button img {
   display: block;
-  max-width: 260px;   /* button size */
+  max-width: 200px;   /* button size */
   width: 100%;
   height: auto;
   margin: 16px auto 0;
