@@ -1,0 +1,26 @@
+[
+  {
+    "id": "nb-forest-001",
+    "title": "Forest Friends Notebook",
+    "type": "notebooks",
+    "price": 12.00,
+    "tags": ["notebook","lined","green","forest"],
+    "url": "./notebooks.html"
+  },
+  {
+    "id": "bm-acorn-002",
+    "title": "Acorn Bookmark",
+    "type": "bookmarks",
+    "price": 6.50,
+    "tags": ["bookmark","brown","woodland","acorn"],
+    "url": "./bookmarks.html"
+  },
+  {
+    "id": "kc-fox-003",
+    "title": "Fox Keychain",
+    "type": "keychains",
+    "price": 9.00,
+    "tags": ["keychain","orange","fox","cute"],
+    "url": "./keychains.html"
+  }
+]
