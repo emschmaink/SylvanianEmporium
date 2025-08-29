@@ -198,23 +198,61 @@ a:hover{text-decoration:underline}
   line-height: 0;
 }
 
-.send-btn img {
-  display: block;
-  max-width: 260px;     /* adjust size */
-  width: 100%;
-  height: auto;
-  margin: 0 auto;       /* keeps the image itself centered */
-  transition: transform 0.15s ease, opacity 0.15s ease, box-shadow 0.2s ease;
+/* Accessibility helper (keep) */
+.sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0,0,0,0); white-space: nowrap; border: 0;
 }
 
+/* RESET & STYLE the custom SEND button */
+.send-btn {
+  all: unset;                 /* wipe UA/default button styles */
+  display: block;             /* center with auto margins */
+  margin: 0 auto;
+  cursor: pointer;
+  line-height: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.send-btn img {
+  display: block;
+  max-width: 260px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  transition: transform .15s ease, opacity .15s ease, box-shadow .2s ease;
+}
+
+/* Remove any stubborn borders/outlines from browsers */
+.send-btn,
+.send-btn:focus,
+.send-btn:active {
+  background: transparent !important;
+  border: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Firefox inner focus ring fix */
+.send-btn::-moz-focus-inner { border: 0 !important; }
+
+/* Hover/active to match FAQ pill image */
 .send-btn:hover img {
   transform: scale(1.05);
   opacity: 0.9;
-  box-shadow: 0 0 14px rgba(115, 86, 59, 0.7); /* warm brown glow */
+  box-shadow: 0 0 14px rgba(115, 86, 59, 0.7);
 }
 .send-btn:active img {
   transform: scale(0.97);
 }
+
+/* Optional: keyboard focus (accessible “glow”) */
+.send-btn:focus-visible img {
+  box-shadow: 0 0 0 3px rgba(115, 86, 59, 0.5);
+}
+
 
 /* Responsive sizing for SEND button */
 @media (max-width: 600px) {
