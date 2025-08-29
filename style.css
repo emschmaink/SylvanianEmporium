@@ -299,7 +299,40 @@ mark { background: #ffe6b8; padding: 0 .12em; border-radius: 4px; }
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; }
 }
+/* --- Shop: smaller, centered search bar --- */
+.catalog-search .search-input {
+  max-width: 520px;   /* smaller width */
+  margin: 0 auto 12px;
+  padding: 10px 12px; /* slightly slimmer */
+  font: 600 15px/1.25 Nunito, system-ui, sans-serif;
+}
 
+/* center the chips/filters below the input */
+.catalog-search .chips,
+.catalog-search .price-sort {
+  justify-content: center;
+}
+
+/* --- Shop: keep product cards still (no sliding) --- */
+/* Remove transform scaling on hover so the grid doesn't shift */
+.results .card {
+  transition: box-shadow 0.2s ease, opacity 0.15s ease; /* no transform here */
+}
+.results .card:hover {
+  /* transform: scale(1.02);  <-- removed */
+  box-shadow: 0 0 14px rgba(115,86,59,.35);
+}
+
+/* If you also want to tone down any other image button movement on this page */
+.catalog-search .card img,
+.catalog-search .card:hover img {
+  transform: none !important;
+}
+
+/* Optional: respect users who prefer reduced motion everywhere */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
 
 /* ============================
    ABOUT PAGE STYLES
