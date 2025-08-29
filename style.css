@@ -134,50 +134,35 @@ a:hover{text-decoration:underline}
     max-width: 280px;
   }
 }
-.index-wrap .image-button img {
+/* Shop All button (image style to match FAQ/Send) */
+.shop-all-btn img {
   display: block;
-  max-width: 100px;       /* adjust button size */
+  max-width: 260px;   /* same as Send + Contact Us buttons */
   width: 100%;
   height: auto;
-  margin: 0 auto;
-  transition: transform 0.15s ease, opacity 0.15s ease;
-}
-
-/* ✨ Hover effect for the button */
-.index-wrap .image-button img:hover {
-  transform: scale(1.05); /* grows slightly */
-  opacity: 0.9;           /* subtle dim */
+  margin: 20px auto 0;
+  transition: transform 0.15s ease, opacity 0.15s ease, box-shadow 0.2s ease;
   cursor: pointer;
 }
-/* Ensure Index shop button centers & has a base size */
-.index-wrap .image-button img {
-  display: block;
-  max-width: 260px;   /* same base size as Send button */
-  width: 100%;
-  height: auto;
-  margin: 0 auto;
-  transition: transform 0.15s ease, opacity 0.15s ease, box-shadow 0.2s ease;
-}
 
-/* Hover effect to match */
-.index-wrap .image-button img:hover {
+.shop-all-btn img:hover {
   transform: scale(1.05);
   opacity: 0.9;
   box-shadow: 0 0 14px rgba(115, 86, 59, 0.7);
-  cursor: pointer;
 }
 
-/* ✅ Responsive sizes (match the Send button breakpoints) */
+.shop-all-btn img:active {
+  transform: scale(0.97);
+}
+
+/* Responsive shrink */
 @media (max-width: 600px) {
-  .index-wrap .image-button img {
-    max-width: 150px;
-  }
+  .shop-all-btn img { max-width: 200px; }
 }
 @media (max-width: 400px) {
-  .index-wrap .image-button img {
-    max-width: 100px;
-  }
+  .shop-all-btn img { max-width: 160px; }
 }
+
 /* ============================
    SHOP PAGE STYLES
    ============================ */
