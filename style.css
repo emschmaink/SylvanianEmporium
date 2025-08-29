@@ -333,6 +333,40 @@ mark { background: #ffe6b8; padding: 0 .12em; border-radius: 4px; }
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; }
 }
+/* ---- SHOP: center rail to match other pages ---- */
+.shop-wrap {
+  /* same pattern you used on About/FAQ hero images */
+  max-width: 900px;         /* adjust if your other pages use 900/880/960 etc. */
+  margin: 0 auto;           /* centers between the vertical borders */
+  padding: 0 16px;          /* a little breathing room so content never touches the borders */
+}
+
+/* ensure the search UI and results obey the rail width */
+.shop-wrap .catalog-search { margin-left: auto; margin-right: auto; }
+.shop-wrap .results        { margin-left: auto; margin-right: auto; }
+
+/* keep the search input compact & centered inside the rail */
+.shop-wrap .catalog-search .search-input {
+  max-width: 520px;
+  margin: 0 auto 12px;
+}
+
+/* center the chip filters and sort/price bar */
+.shop-wrap .catalog-search .chips,
+.shop-wrap .catalog-search .price-sort {
+  justify-content: center;
+}
+
+/* product grid always stays inside the rail */
+.shop-wrap .results {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* optional: slightly tighter grid so cards never feel cramped against borders */
+@media (min-width: 901px) {
+  .shop-wrap .results { gap: 16px; }
+}
 
 /* ============================
    ABOUT PAGE STYLES
