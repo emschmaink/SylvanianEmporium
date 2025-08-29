@@ -96,12 +96,12 @@ a:hover{text-decoration:underline}
 /* ✅ Responsive sizes (match the Send button breakpoints) */
 @media (max-width: 600px) {
   .faq-wrap .image-button img {
-    max-width: 200px;
+    max-width: 150px;
   }
 }
 @media (max-width: 400px) {
   .faq-wrap .image-button img {
-    max-width: 160px;
+    max-width: 100px;
   }
 }
 
@@ -257,13 +257,13 @@ a:hover{text-decoration:underline}
 /* Responsive sizing for SEND button */
 @media (max-width: 600px) {
   .send-btn img {
-    max-width: 200px; /* shrink on small screens */
+    max-width: 150px; /* shrink on small screens */
   }
 }
 
 @media (max-width: 400px) {
   .send-btn img {
-    max-width: 160px; /* shrink even more on very narrow screens */
+    max-width: 100px; /* shrink even more on very narrow screens */
   }
 }
 .contact-banner2 {
@@ -289,6 +289,15 @@ body::after{
 }
 body::before{ left:0; }
 body::after { right:0; transform:scaleX(-1); }
+/* Hide vines + vertical borders on small screens */
+@media (max-width: 768px) {
+  .vines-left,
+  .vines-right,
+  .vine-border-left,
+  .vine-border-right {
+    display: none !important;
+  }
+}
 
 /* Brown vertical lines at vine/content boundary */
 .container::before,
