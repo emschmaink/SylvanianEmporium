@@ -36,6 +36,102 @@ a:hover{text-decoration:underline}
 .main-nav a{font:800 clamp(16px,2.2vw,24px)/1 Nunito,system-ui,sans-serif;color:var(--text);text-decoration:none;}
 .main-nav a:hover{text-decoration:underline}
 
+/* Index banner */
+.index-banner {
+  display: block;
+  max-width: 600px;   /* adjust to taste */
+  width: 100%;
+  height: auto;
+  margin: 0 auto 40px; /* centers + spacing below */
+}
+
+/* Responsive shrinking */
+@media (max-width: 600px) {
+  .index-banner {
+    max-width: 400px;
+  }
+}
+@media (max-width: 400px) {
+  .index-banner {
+    max-width: 280px;
+  }
+}
+
+/* Collection buttons section */
+.collections {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  margin: 40px auto;
+  max-width: 1000px;
+}
+
+/* Collection buttons */
+.collection-btn img {
+  display: block;
+  max-width: 300px;   /* desktop size */
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  transition: transform 0.15s ease, opacity 0.15s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+/* Hover glow — matches FAQ + Send buttons */
+.collection-btn img:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+  box-shadow: 0 0 14px rgba(115, 86, 59, 0.7);
+}
+
+.collection-btn img:active {
+  transform: scale(0.97);
+}
+
+/* Responsive sizes (same breakpoints as FAQ + Send) */
+@media (max-width: 768px) {
+  .collection-btn img {
+    max-width: 220px;
+  }
+}
+@media (max-width: 480px) {
+  .collection-btn img {
+    max-width: 160px;
+  }
+}
+/* Index banners */
+.index-banner,
+.index-banner2 {
+  display: block;
+  max-width: 600px;   /* adjust as needed */
+  width: 100%;
+  height: auto;
+  margin: 0 auto;     /* center horizontally */
+}
+
+/* Spacing */
+.index-banner {
+  margin-bottom: 40px; /* space before buttons */
+}
+.index-banner2 {
+  margin-top: 40px;    /* space after buttons */
+}
+
+/* Responsive sizes */
+@media (max-width: 600px) {
+  .index-banner,
+  .index-banner2 {
+    max-width: 400px;
+  }
+}
+@media (max-width: 400px) {
+  .index-banner,
+  .index-banner2 {
+    max-width: 280px;
+  }
+}
+
 .about-img img {
   display: block;
   max-width: 900px;   /* adjust this number to make it bigger/smaller */
