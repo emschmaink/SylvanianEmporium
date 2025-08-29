@@ -30,43 +30,59 @@
     <section class="catalog-search">
   <label class="sr-only" for="q">Search products</label>
   <input id="q" class="search-input" type="search" placeholder="Search notebooks, bookmarks, keychains…" autocomplete="off">
-  
+
   <div class="filters">
-    <button class="chip is-active" data-type="all">All</button>
-    <button class="chip" data-type="notebooks">Notebooks</button>
-    <button class="chip" data-type="bookmarks">Bookmarks</button>
-    <button class="chip" data-type="keychains">Keychains</button>
+    <div class="chips">
+      <button class="chip is-active" data-type="all">All</button>
+      <button class="chip" data-type="notebooks">Notebooks</button>
+      <button class="chip" data-type="bookmarks">Bookmarks</button>
+      <button class="chip" data-type="keychains">Keychains</button>
+    </div>
+
+    <div class="price-sort">
+      <div class="price">
+        <label>Min $<input id="minPrice" type="number" step="0.01" min="0" placeholder="0"></label>
+        <label>Max $<input id="maxPrice" type="number" step="0.01" min="0" placeholder="∞"></label>
+      </div>
+      <div class="sort">
+        <label class="sr-only" for="sortBy">Sort by</label>
+        <select id="sortBy">
+          <option value="newest">Newest</option>
+          <option value="priceAsc">Price: Low → High</option>
+          <option value="priceDesc">Price: High → Low</option>
+        </select>
+      </div>
+    </div>
   </div>
 
   <div id="results" class="results" aria-live="polite"></div>
 </section>
 
 <script>
-  // --- tiny helper: safely load JSON ---
   async function loadCatalog() {
     const res = await fetch('./assets/products.json', {cache: 'no-store'});
     if (!res.ok) throw new Error('Could not load products.json');
     return res.json();
   }
 
-  // --- normalize text for matching ---
+  const esc = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   const norm = s => (s || '').toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g, '');
 
-  // --- debounce ---
-  const debounce = (fn, ms=120) => {
-    let t; return (...a) => { clearTimeout(t); t = setTimeout(()=>fn(...a), ms); };
-  };
+  function highlight(text, query) {
+    if (!query) return text;
+    const re = new RegExp(`(${esc(query)})`, 'ig');
+    return text.replace(re, '<mark>$1</mark>');
+  }
 
-  // --- render one card ---
   function cardHTML(p, query) {
-    const q = norm(query);
-    const title = p.title.replace(new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')})`,'i'), '<mark>$1</mark>');
+    const title = highlight(p.title, query);
+    const tags = (p.tags || []).map(t => `<span>${highlight(t, query)}</span>`).join('');
     return `
       <a class="card" href="${p.url}">
         <div class="card-body">
-          <h3>${q ? title : p.title}</h3>
+          <h3>${title}</h3>
           <p class="meta">${p.type} · $${Number(p.price).toFixed(2)}</p>
-          ${p.tags?.length ? `<p class="tags">${p.tags.slice(0,4).map(t=>`<span>${t}</span>`).join('')}</p>` : ''}
+          ${tags ? `<p class="tags">${tags}</p>` : ''}
         </div>
       </a>
     `;
@@ -74,32 +90,68 @@
 
   (async function initSearch(){
     const data = await loadCatalog();
+
     const input = document.getElementById('q');
     const results = document.getElementById('results');
-    const chips = [...document.querySelectorAll('.filters .chip')];
+    const chips = [...document.querySelectorAll('.chips .chip')];
+    const minPriceEl = document.getElementById('minPrice');
+    const maxPriceEl = document.getElementById('maxPrice');
+    const sortByEl   = document.getElementById('sortBy');
+
     let currentType = 'all';
 
+    function parsePrice(v) {
+      const n = parseFloat(v);
+      return isNaN(n) ? null : n;
+    }
+
+    function sortItems(items, mode) {
+      switch (mode) {
+        case 'priceAsc':  return items.sort((a,b)=> a.price - b.price);
+        case 'priceDesc': return items.sort((a,b)=> b.price - a.price);
+        case 'newest':
+        default:
+          return items.sort((a,b)=> new Date(b.added || 0) - new Date(a.added || 0));
+      }
+    }
+
     function runSearch() {
-      const q = norm(input.value.trim());
-      let items = data;
+      const q = input.value.trim();
+      const qn = norm(q);
+      const minP = parsePrice(minPriceEl.value);
+      const maxP = parsePrice(maxPriceEl.value);
+      const sortMode = sortByEl.value;
+
+      let items = data.slice();
 
       if (currentType !== 'all') {
         items = items.filter(p => p.type === currentType);
       }
-      if (q) {
+
+      if (minP != null) items = items.filter(p => Number(p.price) >= minP);
+      if (maxP != null) items = items.filter(p => Number(p.price) <= maxP);
+
+      if (qn) {
         items = items.filter(p => {
           const hay = [p.title, p.type, ...(p.tags||[])].map(norm).join(' ');
-          return hay.includes(q);
+          return hay.includes(qn);
         });
       }
 
+      items = sortItems(items, sortMode);
+
       results.innerHTML = items.length
-        ? items.map(p => cardHTML(p, input.value.trim())).join('')
-        : `<p class="empty">No matches yet. Try a different term or category.</p>`;
+        ? items.map(p => cardHTML(p, q)).join('')
+        : `<p class="empty">No matches yet. Try different words, filters or sorting.</p>`;
     }
 
+    const debounce = (fn, ms=120)=>{ let t; return (...a)=>{ clearTimeout(t); t=setTimeout(()=>fn(...a), ms); }; };
     const doSearch = debounce(runSearch, 120);
+
     input.addEventListener('input', doSearch);
+    minPriceEl.addEventListener('input', doSearch);
+    maxPriceEl.addEventListener('input', doSearch);
+    sortByEl.addEventListener('change', runSearch);
 
     chips.forEach(chip=>{
       chip.addEventListener('click', ()=>{
@@ -110,7 +162,6 @@
       });
     });
 
-    // initial render
     runSearch();
   })();
 </script>
