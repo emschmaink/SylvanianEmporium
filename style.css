@@ -266,6 +266,13 @@ a:hover{text-decoration:underline}
     max-width: 160px; /* shrink even more on very narrow screens */
   }
 }
+.contact-footer {
+  display: block;
+  max-width: 700px;   /* same size as your Contact title banner */
+  width: 100%;
+  height: auto;
+  margin: 24px auto 0; /* space above, centered */
+}
 
 /* Side vines */
 body::before,
