@@ -111,7 +111,7 @@ a:hover{text-decoration:underline}
 
 .contact-banner {
   display: block;
-  max-width: 700px;   /* adjust width */
+  max-width: 800px;   /* adjust width */
   width: 100%;
   height: auto;
   margin: 0 auto 24px; /* centers it + space below */
@@ -268,7 +268,7 @@ a:hover{text-decoration:underline}
 }
 .contact-banner2 {
   display: block;
-  max-width: 600px;   /* same size as your Contact title banner */
+  max-width: 800px;   /* same size as your Contact title banner */
   width: 100%;
   height: auto;
   margin: 24px auto 0; /* space above, centered */
