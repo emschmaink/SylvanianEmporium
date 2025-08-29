@@ -39,7 +39,7 @@ a:hover{text-decoration:underline}
 /* Index banner */
 .index-banner {
   display: block;
-  max-width: 600px;   /* adjust to taste */
+  max-width: 800px;   /* adjust to taste */
   width: 100%;
   height: auto;
   margin: 0 auto 40px; /* centers + spacing below */
@@ -104,7 +104,7 @@ a:hover{text-decoration:underline}
 .index-banner,
 .index-banner2 {
   display: block;
-  max-width: 600px;   /* adjust as needed */
+  max-width: 900px;   /* adjust as needed */
   width: 100%;
   height: auto;
   margin: 0 auto;     /* center horizontally */
