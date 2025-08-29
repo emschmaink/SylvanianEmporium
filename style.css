@@ -36,7 +36,10 @@ a:hover{text-decoration:underline}
 .main-nav a{font:800 clamp(16px,2.2vw,24px)/1 Nunito,system-ui,sans-serif;color:var(--text);text-decoration:none;}
 .main-nav a:hover{text-decoration:underline}
 
-/* Index banner */
+/* ============================
+   INDEX PAGE STYLES
+   ============================ */
+
 .index-banner {
   display: block;
   max-width: 800px;   /* adjust to taste */
@@ -131,6 +134,58 @@ a:hover{text-decoration:underline}
     max-width: 280px;
   }
 }
+.index-wrap .image-button img {
+  display: block;
+  max-width: 100px;       /* adjust button size */
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+/* ✨ Hover effect for the button */
+.index-wrap .image-button img:hover {
+  transform: scale(1.05); /* grows slightly */
+  opacity: 0.9;           /* subtle dim */
+  cursor: pointer;
+}
+/* Ensure Index shop button centers & has a base size */
+.index-wrap .image-button img {
+  display: block;
+  max-width: 260px;   /* same base size as Send button */
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  transition: transform 0.15s ease, opacity 0.15s ease, box-shadow 0.2s ease;
+}
+
+/* Hover effect to match */
+.index-wrap .image-button img:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+  box-shadow: 0 0 14px rgba(115, 86, 59, 0.7);
+  cursor: pointer;
+}
+
+/* ✅ Responsive sizes (match the Send button breakpoints) */
+@media (max-width: 600px) {
+  .index-wrap .image-button img {
+    max-width: 150px;
+  }
+}
+@media (max-width: 400px) {
+  .index-wrap .image-button img {
+    max-width: 100px;
+  }
+}
+/* ============================
+   SHOP PAGE STYLES
+   ============================ */
+
+
+/* ============================
+   ABOUT PAGE STYLES
+   ============================ */
 
 .about-img img {
   display: block;
@@ -140,7 +195,10 @@ a:hover{text-decoration:underline}
   margin: 0 auto;     /* centers it horizontally */
 }
 
-/* FAQ layout */
+/* ============================
+   FAQ PAGE STYLES
+   ============================ */
+
 .faq-wrap {
   max-width: 900px;       /* same as About page width */
   margin: 0 auto;
@@ -158,7 +216,7 @@ a:hover{text-decoration:underline}
 
 .faq-wrap .image-button img {
   display: block;
-  max-width: 200px;       /* adjust button size */
+  max-width: 100px;       /* adjust button size */
   width: 100%;
   height: auto;
   margin: 0 auto;
