@@ -135,7 +135,7 @@ a:hover{text-decoration:underline}
   }
 }
 /* Shop All button (image style to match FAQ/Send) */
-.shop-all-btn img {
+.shop-btn img {
   display: block;
   max-width: 260px;   /* same as Send + Contact Us buttons */
   width: 100%;
@@ -145,22 +145,22 @@ a:hover{text-decoration:underline}
   cursor: pointer;
 }
 
-.shop-all-btn img:hover {
+.shop-btn img:hover {
   transform: scale(1.05);
   opacity: 0.9;
   box-shadow: 0 0 14px rgba(115, 86, 59, 0.7);
 }
 
-.shop-all-btn img:active {
+.shop-btn img:active {
   transform: scale(0.97);
 }
 
 /* Responsive shrink */
 @media (max-width: 600px) {
-  .shop-all-btn img { max-width: 200px; }
+  .shop-btn img { max-width: 200px; }
 }
 @media (max-width: 400px) {
-  .shop-all-btn img { max-width: 160px; }
+  .shop-btn img { max-width: 160px; }
 }
 
 /* ============================
