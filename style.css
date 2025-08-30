@@ -36,6 +36,36 @@ a:hover{text-decoration:underline}
 .main-nav a{font:800 clamp(16px,2.2vw,24px)/1 Nunito,system-ui,sans-serif;color:var(--text);text-decoration:none;}
 .main-nav a:hover{text-decoration:underline}
 
+/* Learn More button (image style to match FAQ/Send) */
+.learn-btn img {
+  display: block;
+  max-width: 150px;
+  width: 100%;
+  height: auto;
+  margin: 20px auto 0;
+  transition: transform 0.15s ease, opacity 0.15s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.learn-btn img:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+  box-shadow: 0 0 14px rgba(115, 86, 59, 0.7);
+}
+
+.learn-btn img:active {
+  transform: scale(0.97);
+}
+
+/* Responsive shrink */
+@media (max-width: 600px) {
+  .learn-btn img { max-width: 200px; }
+}
+@media (max-width: 400px) {
+  .learn-btn img { max-width: 160px; }
+}
+
+
 /* ============================
    INDEX PAGE STYLES
    ============================ */
