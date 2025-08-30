@@ -42,7 +42,7 @@ a:hover{text-decoration:underline}
   max-width: 150px;
   width: 100%;
   height: auto;
-  margin: 20px auto 0;
+  margin: 0;
   transition: transform 0.15s ease, opacity 0.15s ease, box-shadow 0.2s ease;
   cursor: pointer;
 }
@@ -413,10 +413,10 @@ mark { background: #ffe6b8; padding: 0 .12em; border-radius: 4px; }
 /* Learn More button (image style to match FAQ/Send) */
 .learnmore-btn img {
   display: block;
-  max-width: 200px;
+  max-width: 400px;
   width: 100%;
   height: auto;
-  margin: 20px auto 0;
+  margin: 30px auto 0;
   transition: transform 0.15s ease, opacity 0.15s ease, box-shadow 0.2s ease;
   cursor: pointer;
 }
