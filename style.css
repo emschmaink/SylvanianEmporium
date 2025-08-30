@@ -410,6 +410,35 @@ mark { background: #ffe6b8; padding: 0 .12em; border-radius: 4px; }
   margin: 0 auto;     /* centers it horizontally */
 }
 
+/* Learn More button (image style to match FAQ/Send) */
+.learnmore-btn img {
+  display: block;
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+  margin: 20px auto 0;
+  transition: transform 0.15s ease, opacity 0.15s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.learnmore-btn img:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+  box-shadow: 0 0 14px rgba(115, 86, 59, 0.7);
+}
+
+.learnmore-btn img:active {
+  transform: scale(0.97);
+}
+
+/* Responsive shrink */
+@media (max-width: 600px) {
+  .learnmore-btn img { max-width: 100px; }
+}
+@media (max-width: 400px) {
+  .learnmore-btn img { max-width: 90px; }
+}
+
 /* ============================
    FAQ PAGE STYLES
    ============================ */
