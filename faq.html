@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FAQ — Sylvanian Emporium</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <img class="full-header" src="./assets/header.png" alt="Sylvanian Emporium">
+    <nav class="main-nav">
+  <a href="./index.html">Home</a>
+  <a href="./shop.html">Shop</a>
+  <a href="./about.html">About</a>
+  <a href="./faq.html" aria-current="page">FAQ</a>
+  <a href="./contact.html">Contact</a>
+</nav>
+  </header>
+
+<main class="faq-wrap">
+  <!-- Your existing FAQ image -->
+  <img src="./assets/faq-page.png" alt="FAQ details" class="faq-hero">
+
+  <!-- Contact button beneath -->
+  <a href="./contact.html" class="image-button">
+    <img src="./assets/contact-button.png" alt="Contact Us">
+  </a>
+</main>
+       
+<footer class="site-footer">
+  <div class="container">
+    <small>© <span id="year"></span> Sylvanian Emporium</small>
+    <div class="social-links">
+      <a href="https://www.etsy.com/shop/SYLVANIANEMPORIUM" target="_blank" rel="noopener">
+        <img src="./assets/etsy.png" alt="Etsy">
+      </a>
+      <a href="https://instagram.com/SYLVANIAN.EMPORIUM" target="_blank" rel="noopener">
+        <img src="./assets/instagram.png" alt="Instagram">
+      </a>
+      <a href="https://discord.gg/tVnAVeVzAV" target="_blank" rel="noopener">
+        <img src="./assets/discord.png" alt="Discord">
+      </a>
+    </div>
+  </div>
+</footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
