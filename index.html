@@ -9,48 +9,71 @@
 <body>
   <header class="site-header">
     <img class="full-header" src="./assets/header.png" alt="Sylvanian Emporium">
-    <nav class="main-nav">
-      <a href="./index.html" aria-current="page">Home</a>
-      <a href="#shop">Shop</a>
-      <a href="#about">About</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact">Contact</a>
-    </nav>
+ <nav class="main-nav">
+  <a href="./index.html" aria-current="page">Home</a>
+  <a href="./shop.html">Shop</a>
+  <a href="./about.html">About</a>
+  <a href="./faq.html">FAQ</a>
+  <a href="./contact.html">Contact</a>
+</nav>
   </header>
 
-  <main id="main">
+ <main id="main">
     <section class="announcement container">
       <div class="pill-image">
         <img src="./assets/announcement.png" alt="Your order could make an impact!">
-        <a href="#" class="learn-link">LEARN MORE</a>
       </div>
     </section>
+  
+    <!-- Learn More button -->
+<a href="./about.html" target="_blank" rel="noopener" class="image-button">
+  <img src="./assets/learn-button.png" alt="Learn More">
+</a>
 
-    <section class="hero container framed">
-      <h2 class="eyebrow">We’re so happy to see you!</h2>
-      <h2 class="headline">Welcome to Sylvanian Emporium</h2>
-    </section>
-  </main>
+   
+  <!-- Index top banner -->
+<img src="./assets/index-banner.png" 
+     alt="Sylvanian Emporium Collections" 
+     class="index-banner">
 
-  <footer class="site-footer">
-    <div class="container">
-      <small>© <span id="year"></span> Sylvanian Emporium</small>
-      <div class="social-links">
-        <a href="https://www.etsy.com/shop/YOURSHOP" target="_blank" rel="noopener">
-          <img src="./assets/icons/etsy.svg" alt="Etsy">
-        </a>
-        <a href="https://instagram.com/YOURNAME" target="_blank" rel="noopener">
-          <img src="./assets/icons/instagram.svg" alt="Instagram">
-        </a>
-        <a href="https://facebook.com/YOURNAME" target="_blank" rel="noopener">
-          <img src="./assets/icons/facebook.svg" alt="Facebook">
-        </a>
-        <a href="https://discord.gg/YOURINVITECODE" target="_blank" rel="noopener">
-          <img src="./assets/icons/discord.svg" alt="Discord">
-        </a>
-      </div>
+<section class="collections">
+  <a href="./notebooks.html" class="collection-btn">
+    <img src="./assets/notebook-button.png" alt="Shop Notebooks">
+  </a>
+  <a href="./bookmarks.html" class="collection-btn">
+    <img src="./assets/bookmark-button.png" alt="Shop Bookmarks">
+  </a>
+  <a href="./keychains.html" class="collection-btn">
+    <img src="./assets/keychain-button.png" alt="Shop Keychains">
+  </a>
+</section>
+
+<!-- Index bottom banner -->
+<img src="./assets/index-banner2.png" 
+     alt="Sylvanian Emporium" 
+     class="index-banner2">
+  
+  <!-- Shop All button -->
+<a href="./shop.html" class="shop-btn">
+  <img src="./assets/shop-button.png" alt="Shop All">
+</a>
+
+<footer class="site-footer">
+  <div class="container">
+    <small>© <span id="year"></span> Sylvanian Emporium</small>
+    <div class="social-links">
+      <a href="https://www.etsy.com/shop/SYLVANIANEMPORIUM" target="_blank" rel="noopener">
+        <img src="./assets/etsy.png" alt="Etsy">
+      </a>
+      <a href="https://instagram.com/SYLVANIAN.EMPORIUM" target="_blank" rel="noopener">
+        <img src="./assets/instagram.png" alt="Instagram">
+      </a>
+      <a href="https://discord.gg/tVnAVeVzAV" target="_blank" rel="noopener">
+        <img src="./assets/discord.png" alt="Discord">
+      </a>
     </div>
-  </footer>
+  </div>
+</footer>
 
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
