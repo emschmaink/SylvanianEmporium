@@ -471,7 +471,7 @@ mark { background: #ffe6b8; padding: 0 .12em; border-radius: 4px; }
    CONTACT PAGE STYLES
    ============================ */
 
-.contact-banner {
+.contact-banner1 {
   display: block;
   max-width: 800px;   /* adjust width */
   width: 100%;
@@ -479,7 +479,7 @@ mark { background: #ffe6b8; padding: 0 .12em; border-radius: 4px; }
   margin: 0 auto 24px; /* centers it + space below */
 }
 <h1 class="sr-only">Contact Us</h1>
-<img src="./assets/contact-banner.png" alt="Contact Us" class="contact-banner">
+<img src="./assets/contact-banner1.png" alt="Contact Us" class="contact-banner1">
 
 /* Layout wrapper */
 .contact-wrap {
