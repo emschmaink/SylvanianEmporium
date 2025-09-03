@@ -24,18 +24,6 @@
         <img src="./assets/announcement.png" alt="Your order could make an impact!">
       </div>
     </section>
-    
-<main class="shop-wrap">
-  
-  <section class="catalog-search">
-    <label class="sr-only" for="q">Search products</label>
-    <input id="q" class="search-input" type="search" placeholder="Search notebooks, bookmarks, keychains…" autocomplete="off">
-    <!-- filters and sort controls here -->
-  </section>
-
-  <div id="results" class="results" aria-live="polite">
-    <!-- product cards load here -->
-  </div>
 
 <main class="shop-wrap">
 
@@ -43,32 +31,6 @@
     <label class="sr-only" for="q">Search products</label>
     <input id="q" class="search-input" type="search"
            placeholder="Search notebooks, bookmarks, keychains…" autocomplete="off">
-
-    <!-- filters + sort live INSIDE catalog-search, under the input -->
-    <div class="filters">
-      <div class="chips">
-        <button class="chip is-active" data-type="all">All</button>
-        <button class="chip" data-type="notebooks">Notebooks</button>
-        <button class="chip" data-type="bookmarks">Bookmarks</button>
-        <button class="chip" data-type="keychains">Keychains</button>
-      </div>
-
-      <div class="price-sort">
-        <div class="price">
-          <label>Min $<input id="minPrice" type="number" step="0.01" min="0" placeholder="0"></label>
-          <label>Max $<input id="maxPrice" type="number" step="0.01" min="0" placeholder="∞"></label>
-        </div>
-        <div class="sort">
-          <label class="sr-only" for="sortBy">Sort by</label>
-          <select id="sortBy">
-            <option value="newest">Newest</option>
-            <option value="priceAsc">Price: Low → High</option>
-            <option value="priceDesc">Price: High → Low</option>
-          </select>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- results come AFTER the catalog-search section -->
   <div id="results" class="results" aria-live="polite"></div>
