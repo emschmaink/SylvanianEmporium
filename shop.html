@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shop — Sylvanian Emporium</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <img class="full-header" src="./assets/header.png" alt="Sylvanian Emporium">
+    <nav class="main-nav">
+      <a href="./index.html">Home</a>
+      <a href="./shop.html" aria-current="page">Shop</a>
+      <a href="./about.html">About</a>
+      <a href="./faq.html">FAQ</a>
+      <a href="./contact.html">Contact</a>
+    </nav>
+  </header>
+
+    <main id="main">
+    <section class="announcement container">
+      <div class="pill-image">
+        <img src="./assets/announcement.png" alt="Your order could make an impact!">
+      </div>
+    </section>
+    
+<main class="shop-wrap">
+  
+  <section class="catalog-search">
+    <label class="sr-only" for="q">Search products</label>
+    <input id="q" class="search-input" type="search" placeholder="Search notebooks, bookmarks, keychains…" autocomplete="off">
+    <!-- filters and sort controls here -->
+  </section>
+
+  <div id="results" class="results" aria-live="polite">
+    <!-- product cards load here -->
+  </div>
+
+<main class="shop-wrap">
+
+  <section class="catalog-search">
+    <label class="sr-only" for="q">Search products</label>
+    <input id="q" class="search-input" type="search"
+           placeholder="Search notebooks, bookmarks, keychains…" autocomplete="off">
+
+    <!-- filters + sort live INSIDE catalog-search, under the input -->
+    <div class="filters">
+      <div class="chips">
+        <button class="chip is-active" data-type="all">All</button>
+        <button class="chip" data-type="notebooks">Notebooks</button>
+        <button class="chip" data-type="bookmarks">Bookmarks</button>
+        <button class="chip" data-type="keychains">Keychains</button>
+      </div>
+
+      <div class="price-sort">
+        <div class="price">
+          <label>Min $<input id="minPrice" type="number" step="0.01" min="0" placeholder="0"></label>
+          <label>Max $<input id="maxPrice" type="number" step="0.01" min="0" placeholder="∞"></label>
+        </div>
+        <div class="sort">
+          <label class="sr-only" for="sortBy">Sort by</label>
+          <select id="sortBy">
+            <option value="newest">Newest</option>
+            <option value="priceAsc">Price: Low → High</option>
+            <option value="priceDesc">Price: High → Low</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- results come AFTER the catalog-search section -->
+  <div id="results" class="results" aria-live="polite"></div>
+
+  <script>
+    async function loadCatalog() {
+      const res = await fetch('./assets/products.json', {cache: 'no-store'});
+      if (!res.ok) throw new Error('Could not load products.json');
+      return res.json();
+    }
+    const esc = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const norm = s => (s || '').toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g, '');
+    function highlight(text, query) {
+      if (!query) return text;
+      const re = new RegExp(`(${esc(query)})`, 'ig');
+      return text.replace(re, '<mark>$1</mark>');
+    }
+    function cardHTML(p, query) {
+      const title = highlight(p.title, query);
+      const tags = (p.tags || []).map(t => `<span>${highlight(t, query)}</span>`).join('');
+      return `
+        <a class="card" href="${p.url}">
+          <div class="card-body">
+            <h3>${title}</h3>
+            <p class="meta">${p.type} · $${Number(p.price).toFixed(2)}</p>
+            ${tags ? `<p class="tags">${tags}</p>` : ''}
+          </div>
+        </a>
+      `;
+    }
+    (async function initSearch(){
+      const data = await loadCatalog();
+      const input = document.getElementById('q');
+      const results = document.getElementById('results');
+      const chips = [...document.querySelectorAll('.chips .chip')];
+      const minPriceEl = document.getElementById('minPrice');
+      const maxPriceEl = document.getElementById('maxPrice');
+      const sortByEl   = document.getElementById('sortBy');
+      let currentType = 'all';
+      function parsePrice(v){ const n=parseFloat(v); return isNaN(n)?null:n; }
+      function sortItems(items, mode){
+        switch(mode){
+          case 'priceAsc':  return items.sort((a,b)=> a.price - b.price);
+          case 'priceDesc': return items.sort((a,b)=> b.price - a.price);
+          case 'newest':
+          default:          return items.sort((a,b)=> new Date(b.added||0) - new Date(a.added||0));
+        }
+      }
+      function runSearch(){
+        const q = input.value.trim();
+        const qn = norm(q);
+        const minP = parsePrice(minPriceEl.value);
+        const maxP = parsePrice(maxPriceEl.value);
+        const sortMode = sortByEl.value;
+        let items = data.slice();
+        if (currentType !== 'all') items = items.filter(p => p.type === currentType);
+        if (minP != null) items = items.filter(p => Number(p.price) >= minP);
+        if (maxP != null) items = items.filter(p => Number(p.price) <= maxP);
+        if (qn) items = items.filter(p => {
+          const hay = [p.title, p.type, ...(p.tags||[])].map(norm).join(' ');
+          return hay.includes(qn);
+        });
+        items = sortItems(items, sortMode);
+        results.innerHTML = items.length
+          ? items.map(p => cardHTML(p, q)).join('')
+          : `<p class="empty">No matches yet. Try different words, filters or sorting.</p>`;
+      }
+      const debounce=(fn,ms=120)=>{let t;return(...a)=>{clearTimeout(t);t=setTimeout(()=>fn(...a),ms);};};
+      const doSearch = debounce(runSearch, 120);
+      input.addEventListener('input', doSearch);
+      minPriceEl.addEventListener('input', doSearch);
+      maxPriceEl.addEventListener('input', doSearch);
+      sortByEl.addEventListener('change', runSearch);
+      chips.forEach(chip=>{
+        chip.addEventListener('click', ()=>{
+          chips.forEach(c=>c.classList.remove('is-active'));
+          chip.classList.add('is-active');
+          currentType = chip.dataset.type;
+          runSearch();
+        });
+      });
+      runSearch();
+    })();
+  </script>
+
+</main>
+     
+<footer class="site-footer">
+  <div class="container">
+    <small>© <span id="year"></span> Sylvanian Emporium</small>
+    <div class="social-links">
+      <a href="https://www.etsy.com/shop/SYLVANIANEMPORIUM" target="_blank" rel="noopener">
+        <img src="./assets/etsy.png" alt="Etsy">
+      </a>
+      <a href="https://instagram.com/SYLVANIAN.EMPORIUM" target="_blank" rel="noopener">
+        <img src="./assets/instagram.png" alt="Instagram">
+      </a>
+      <a href="https://discord.gg/tVnAVeVzAV" target="_blank" rel="noopener">
+        <img src="./assets/discord.png" alt="Discord">
+      </a>
+    </div>
+  </div>
+</footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
