@@ -3,18 +3,29 @@
   --text:#826747;
   --accent:#969F6E;
   --panel:#f7efe2;
-  --panel-border:#826747;
   --max:1080px;
-  --header-h:180px;
+  --content: 65vw;    /* WIDTH of the centered content (make smaller = more vine space) */
+  --header-h: 180px;  /* height of your banner area; tweak if your header image is taller */
+  --panel-border: #826747; /* brown line color (already in your file) */
 }
+
+/* Reset */
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
-body{font-family:Nunito,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:var(--bg);line-height:1.6}
+body{
+  font-family:Nunito,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.6;
+}
 h1,h2,h3{font-family:"Playfair Display",serif;color:var(--text)}
-a{color:var(--text);text-decoration:none} a:hover{text-decoration:underline}
-.container{width:min(var(--max),92%);margin:0 auto}
+a{color:var(--text);text-decoration:none}
+a:hover{text-decoration:underline}
+.container { width: min(var(--max), 65%); margin: 0 auto; }
+
+/* Header and nav */
 .site-header{position:sticky;top:0;z-index:100;background:var(--accent)}
-.full-header{display:block;width:100%;height:auto;max-height:180px;object-fit:contain;margin:0;line-height:0}
+.full-header{display:block;width:100%;height:auto;max-height:165px;object-fit:contain;margin:0;line-height:0}
 .main-nav{
   display:flex;justify-content:center;gap:clamp(28px,8vw,120px);
   background:var(--panel);
@@ -22,13 +33,707 @@ a{color:var(--text);text-decoration:none} a:hover{text-decoration:underline}
   border-bottom:2px solid var(--panel-border);
   padding:clamp(8px,1.6vw,12px) 0;margin:0;position:relative;z-index:101;
 }
-.main-nav a{font:800 clamp(16px,2.2vw,24px)/1 Nunito,system-ui,sans-serif}
-.announcement{margin:6px auto 8px}
-.pill-image{position:relative;width:min(600px,90%);margin:0 auto}
-.pill-image img{display:block;width:100%;height:auto}
-.pill-image .learn-link{position:absolute;bottom:28%;left:50%;transform:translateX(-50%);font-weight:700;font-size:1rem;color:var(--text);text-decoration:none}
+.main-nav a{font:800 clamp(16px,2.2vw,24px)/1 Nunito,system-ui,sans-serif;color:var(--text);text-decoration:none;}
+.main-nav a:hover{text-decoration:underline}
+.index-banner {
+  display: block;
+  max-width: 800px;   /* adjust to taste */
+  width: 100%;
+  height: auto;
+  margin: 0 auto 40px; /* centers + spacing below */
+}
+
+/* Responsive shrinking */
+@media (max-width: 600px) {
+  .index-banner {
+    max-width: 400px;
+  }
+}
+@media (max-width: 400px) {
+  .index-banner {
+    max-width: 280px;
+  }
+}
+
+/* Collection buttons section */
+.collections {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  margin: 40px auto;
+  max-width: 800px;
+}
+
+/* Collection buttons */
+.collection-btn img {
+  display: block;
+  max-width: 250px;   /* desktop size */
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  transition: transform 0.15s ease, opacity 0.15s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+/* Hover glow — matches FAQ + Send buttons */
+.collection-btn img:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+  box-shadow: 0 0 14px rgba(115, 86, 59, 0.7);
+}
+
+.collection-btn img:active {
+  transform: scale(0.97);
+}
+
+/* Responsive sizes (same breakpoints as FAQ + Send) */
+@media (max-width: 768px) {
+  .collection-btn img {
+    max-width: 220px;
+  }
+}
+@media (max-width: 480px) {
+  .collection-btn img {
+    max-width: 160px;
+  }
+}
+/* Index banners */
+.index-banner,
+.index-banner2 {
+  display: block;
+  max-width: 900px;   /* adjust as needed */
+  width: 100%;
+  height: auto;
+  margin: 0 auto;     /* center horizontally */
+}
+
+/* Spacing */
+.index-banner {
+  margin-bottom: 40px; /* space before buttons */
+}
+.index-banner2 {
+  margin-top: 40px;    /* space after buttons */
+}
+
+/* Responsive sizes */
+@media (max-width: 600px) {
+  .index-banner,
+  .index-banner2 {
+    max-width: 400px;
+  }
+}
+@media (max-width: 400px) {
+  .index-banner,
+  .index-banner2 {
+    max-width: 280px;
+  }
+}
+/* Shop All button (image style to match FAQ/Send) */
+.shop-btn img {
+  display: block;
+  max-width: 260px;   /* same as Send + Contact Us buttons */
+  width: 100%;
+  height: auto;
+  margin: 20px auto 0;
+  transition: transform 0.15s ease, opacity 0.15s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.shop-btn img:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+  box-shadow: 0 0 14px rgba(115, 86, 59, 0.7);
+}
+
+.shop-btn img:active {
+  transform: scale(0.97);
+}
+
+/* Responsive shrink */
+@media (max-width: 600px) {
+  .shop-btn img { max-width: 200px; }
+}
+@media (max-width: 400px) {
+  .shop-btn img { max-width: 160px; }
+}
+/* ============================
+   SHOP PAGE STYLES
+   ============================ */
+/* --- Catalog search UI --- */
+.catalog-search { max-width: 900px; margin: 24px auto; padding: 0 16px; }
+.search-input {
+  width: 100%; box-sizing: border-box;
+  padding: 12px 14px; border: 2px solid var(--panel-border);
+  border-radius: 12px; background: var(--panel); color: var(--text);
+  font: 600 16px/1.3 Nunito, system-ui, sans-serif;
+}
+.filters { display: flex; gap: 10px; flex-wrap: wrap; margin: 10px 0 16px; }
+.chip {
+  border: 2px solid var(--panel-border); background: var(--panel); color: var(--text);
+  border-radius: 999px; padding: 6px 12px; font-weight: 800; cursor: pointer;
+  transition: transform .12s ease, box-shadow .2s ease, opacity .15s ease;
+}
+.chip:hover { transform: scale(1.05); opacity: .95; }
+.chip.is-active { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+.results { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+@media (max-width: 900px){ .results { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px){ .results { grid-template-columns: 1fr; } }
+
+.card {
+  display: block; text-decoration: none; color: inherit;
+  border: 2px solid var(--panel-border); background: var(--panel);
+  border-radius: 12px; transition: transform .15s ease, box-shadow .2s ease, opacity .15s ease;
+}
+.card:hover { transform: scale(1.02); box-shadow: 0 0 14px rgba(115,86,59,.35); }
+.card-body { padding: 12px; }
+.card h3 { margin: 0 0 6px; font: 800 18px/1.2 Nunito, system-ui, sans-serif; }
+.card .meta { opacity: .8; margin: 0 0 8px; }
+.card .tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.card .tags span {
+  background: rgba(0,0,0,.06); padding: 2px 8px; border-radius: 999px; font-size: 12px;
+}
+.empty { text-align: center; opacity: .8; padding: 12px 0; }
+
+/* a11y helper you already use elsewhere */
+.sr-only { position: absolute !important; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+
+/* --- Catalog search UI (enhanced) --- */
+.catalog-search { max-width: 900px; margin: 24px auto; padding: 0 16px; }
+.search-input {
+  width: 100%; box-sizing: border-box;
+  padding: 12px 14px; border: 2px solid var(--panel-border);
+  border-radius: 12px; background: var(--panel); color: var(--text);
+  font: 600 16px/1.3 Nunito, system-ui, sans-serif;
+}
+
+.filters { display: flex; flex-direction: column; gap: 10px; margin: 10px 0 16px; }
+.chips { display: flex; gap: 10px; flex-wrap: wrap; }
+.price-sort { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; justify-content: space-between; }
+.price { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.price label { display: flex; gap: 6px; align-items: center; font-weight: 800; }
+.price input {
+  width: 110px; padding: 8px 10px; border: 2px solid var(--panel-border);
+  border-radius: 10px; background: var(--panel); color: var(--text);
+  font: 600 14px/1.2 Nunito, system-ui, sans-serif;
+}
+.sort select {
+  padding: 8px 10px; border: 2px solid var(--panel-border);
+  border-radius: 10px; background: var(--panel); color: var(--text);
+  font: 700 14px/1.2 Nunito, system-ui, sans-serif;
+}
+
+/* chips + results (same look you had, kept here for convenience) */
+.chip {
+  border: 2px solid var(--panel-border); background: var(--panel); color: var(--text);
+  border-radius: 999px; padding: 6px 12px; font-weight: 800; cursor: pointer;
+  transition: transform .12s ease, box-shadow .2s ease, opacity .15s ease;
+}
+.chip:hover { transform: scale(1.05); opacity: .95; }
+.chip.is-active { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+.results { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+@media (max-width: 900px){ .results { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px){ .results { grid-template-columns: 1fr; } }
+
+.card {
+  display: block; text-decoration: none; color: inherit;
+  border: 2px solid var(--panel-border); background: var(--panel);
+  border-radius: 12px; transition: transform .15s ease, box-shadow .2s ease, opacity .15s ease;
+}
+.card:hover { transform: scale(1.02); box-shadow: 0 0 14px rgba(115,86,59,.35); }
+.card-body { padding: 12px; }
+.card h3 { margin: 0 0 6px; font: 800 18px/1.2 Nunito, system-ui, sans-serif; }
+.card .meta { opacity: .8; margin: 0 0 8px; }
+.card .tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.card .tags span {
+  background: rgba(0,0,0,.06); padding: 2px 8px; border-radius: 999px; font-size: 12px;
+}
+
+/* <mark> highlight */
+mark { background: #ffe6b8; padding: 0 .12em; border-radius: 4px; }
+
+/* mobile layout niceties */
+@media (max-width: 640px){
+  .price-sort { flex-direction: column; align-items: stretch; gap: 8px; }
+  .price { justify-content: space-between; }
+}
+/* --- Shop: smaller, centered search bar --- */
+.catalog-search .search-input {
+  max-width: 520px;   /* smaller width */
+  margin: 0 auto 12px;
+  padding: 10px 12px; /* slightly slimmer */
+  font: 600 15px/1.25 Nunito, system-ui, sans-serif;
+}
+
+/* center the chips/filters below the input */
+.catalog-search .chips,
+.catalog-search .price-sort {
+  justify-content: center;
+}
+
+/* --- Shop: keep product cards still (no sliding) --- */
+/* Remove transform scaling on hover so the grid doesn't shift */
+.results .card {
+  transition: box-shadow 0.2s ease, opacity 0.15s ease; /* no transform here */
+}
+.results .card:hover {
+  /* transform: scale(1.02);  <-- removed */
+  box-shadow: 0 0 14px rgba(115,86,59,.35);
+}
+
+/* If you also want to tone down any other image button movement on this page */
+.catalog-search .card img,
+.catalog-search .card:hover img {
+  transform: none !important;
+}
+
+/* Optional: respect users who prefer reduced motion everywhere */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
+/* --- Shop: smaller, centered search bar --- */
+.catalog-search .search-input {
+  max-width: 520px;   /* smaller width */
+  margin: 0 auto 12px;
+  padding: 10px 12px; /* slightly slimmer */
+  font: 600 15px/1.25 Nunito, system-ui, sans-serif;
+}
+
+/* center the chips/filters below the input */
+.catalog-search .chips,
+.catalog-search .price-sort {
+  justify-content: center;
+}
+
+/* --- Shop: keep product cards still (no sliding) --- */
+/* Remove transform scaling on hover so the grid doesn't shift */
+.results .card {
+  transition: box-shadow 0.2s ease, opacity 0.15s ease; /* no transform here */
+}
+.results .card:hover {
+  /* transform: scale(1.02);  <-- removed */
+  box-shadow: 0 0 14px rgba(115,86,59,.35);
+}
+
+/* If you also want to tone down any other image button movement on this page */
+.catalog-search .card img,
+.catalog-search .card:hover img {
+  transform: none !important;
+}
+
+/* Optional: respect users who prefer reduced motion everywhere */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
+/* ---- SHOP: center rail to match other pages ---- */
+.shop-wrap {
+  /* same pattern you used on About/FAQ hero images */
+  max-width: 900px;         /* adjust if your other pages use 900/880/960 etc. */
+  margin: 0 auto;           /* centers between the vertical borders */
+  padding: 0 16px;          /* a little breathing room so content never touches the borders */
+}
+
+/* ensure the search UI and results obey the rail width */
+.shop-wrap .catalog-search { margin-left: auto; margin-right: auto; }
+.shop-wrap .results        { margin-left: auto; margin-right: auto; }
+
+/* keep the search input compact & centered inside the rail */
+.shop-wrap .catalog-search .search-input {
+  max-width: 520px;
+  margin: 0 auto 12px;
+}
+
+/* center the chip filters and sort/price bar */
+.shop-wrap .catalog-search .chips,
+.shop-wrap .catalog-search .price-sort {
+  justify-content: center;
+}
+
+/* product grid always stays inside the rail */
+.shop-wrap .results {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* optional: slightly tighter grid so cards never feel cramped against borders */
+@media (min-width: 901px) {
+  .shop-wrap .results { gap: 16px; }
+}
+
+/* ============================
+   ABOUT PAGE STYLES
+   ============================ */
+
+.about-img img {
+  display: block;
+  max-width: 900px;   /* adjust this number to make it bigger/smaller */
+  width: 100%;        /* lets it shrink on phones */
+  height: auto;
+  margin: 0 auto;     /* centers it horizontally */
+}
+
+/* Learn More button (image style to match FAQ/Send) */
+.learnmore-btn img {
+  display: block;
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  margin: 30px auto 0;
+  transition: transform 0.15s ease, opacity 0.15s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.learnmore-btn img:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+  box-shadow: 0 0 14px rgba(115, 86, 59, 0.7);
+}
+
+.learnmore-btn img:active {
+  transform: scale(0.97);
+}
+
+/* Responsive shrink */
+@media (max-width: 600px) {
+  .learnmore-btn img { max-width: 100px; }
+}
+@media (max-width: 400px) {
+  .learnmore-btn img { max-width: 90px; }
+}
+
+/* ============================
+   FAQ PAGE STYLES
+   ============================ */
+
+.faq-wrap {
+  max-width: 900px;       /* same as About page width */
+  margin: 0 auto;
+  padding: 16px;
+  text-align: center;
+}
+
+.faq-wrap .faq-hero {
+  display: block;
+  max-width: 900px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto 20px;    /* space below FAQ image */
+}
+
+.faq-wrap .image-button img {
+  display: block;
+  max-width: 100px;       /* adjust button size */
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+/* ✨ Hover effect for the button */
+.faq-wrap .image-button img:hover {
+  transform: scale(1.05); /* grows slightly */
+  opacity: 0.9;           /* subtle dim */
+  cursor: pointer;
+}
+/* Ensure FAQ contact button centers & has a base size */
+.faq-wrap .image-button img {
+  display: block;
+  max-width: 260px;   /* same base size as Send button */
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  transition: transform 0.15s ease, opacity 0.15s ease, box-shadow 0.2s ease;
+}
+
+/* Hover effect to match */
+.faq-wrap .image-button img:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+  box-shadow: 0 0 14px rgba(115, 86, 59, 0.7);
+  cursor: pointer;
+}
+
+/* ✅ Responsive sizes (match the Send button breakpoints) */
+@media (max-width: 600px) {
+  .faq-wrap .image-button img {
+    max-width: 150px;
+  }
+}
+@media (max-width: 400px) {
+  .faq-wrap .image-button img {
+    max-width: 100px;
+  }
+}
+
+/* ============================
+   CONTACT PAGE STYLES
+   ============================ */
+
+.contact-banner {
+  display: block;
+  max-width: 800px;   /* adjust width */
+  width: 100%;
+  height: auto;
+  margin: 0 auto 24px; /* centers it + space below */
+}
+<h1 class="sr-only">Contact Us</h1>
+<img src="./assets/contact-banner.png" alt="Contact Us" class="contact-banner">
+
+/* Layout wrapper */
+.contact-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px;
+  text-align: center;
+}
+
+/* Hero image (if using a single contact-page image) */
+.contact-hero {
+  display: block;
+  max-width: 900px;  /* adjust as needed */
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+/* Optional "image button" below contact hero */
+.contact-wrap .image-button img {
+  display: block;
+  max-width: 200px;   /* button size */
+  width: 100%;
+  height: auto;
+  margin: 16px auto 0;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+.contact-wrap .image-button img:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+/* Contact form container */
+.contact-form {
+  text-align: left;
+  max-width: 700px;    /* narrower than full width for comfy reading */
+  margin: 0 auto;
+}
+.contact-form label {
+  display: block;
+  font-weight: 700;
+  margin: 12px 0 6px;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border: 2px solid var(--panel-border);
+  border-radius: 10px;
+  background: var(--panel);
+  color: var(--text);
+  font: 600 16px/1.4 Nunito, system-ui, sans-serif;
+}
+
+/* visually-hidden text for accessibility (used inside custom button) */
+.sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Custom SEND button using image */
+.send-btn {
+  appearance: none;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0;
+  display: block;       /* was inline-block */
+  margin: 0 auto;       /* centers the button horizontally */
+  cursor: pointer;
+  line-height: 0;
+}
+
+/* Accessibility helper (keep) */
+.sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+
+/* RESET & STYLE the custom SEND button */
+.send-btn {
+  all: unset;                 /* wipe UA/default button styles */
+  display: block;             /* center with auto margins */
+  margin: 0 auto;
+  cursor: pointer;
+  line-height: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.send-btn img {
+  display: block;
+  max-width: 260px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  transition: transform .15s ease, opacity .15s ease, box-shadow .2s ease;
+}
+
+/* Remove any stubborn borders/outlines from browsers */
+.send-btn,
+.send-btn:focus,
+.send-btn:active {
+  background: transparent !important;
+  border: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Firefox inner focus ring fix */
+.send-btn::-moz-focus-inner { border: 0 !important; }
+
+/* Hover/active to match FAQ pill image */
+.send-btn:hover img {
+  transform: scale(1.05);
+  opacity: 0.9;
+  box-shadow: 0 0 14px rgba(115, 86, 59, 0.7);
+}
+.send-btn:active img {
+  transform: scale(0.97);
+}
+
+/* Optional: keyboard focus (accessible “glow”) */
+.send-btn:focus-visible img {
+  box-shadow: 0 0 0 3px rgba(115, 86, 59, 0.5);
+}
+
+
+/* Responsive sizing for SEND button */
+@media (max-width: 600px) {
+  .send-btn img {
+    max-width: 150px; /* shrink on small screens */
+  }
+}
+
+@media (max-width: 400px) {
+  .send-btn img {
+    max-width: 100px; /* shrink even more on very narrow screens */
+  }
+}
+.contact-banner2 {
+  display: block;
+  max-width: 800px;   /* same size as your Contact title banner */
+  width: 100%;
+  height: auto;
+  margin: 24px auto 0; /* space above, centered */
+}
+
+/* Side vines */
+body::before,
+body::after{
+  content:"";
+  position:fixed;
+  top:var(--header-h);
+  bottom:0;
+  width:calc((100vw - min(var(--max), var(--content))) / 2); /* NO extra subtraction */
+  background:url("./assets/vines.png") no-repeat top center;
+  background-size:cover;
+  pointer-events:none;
+  z-index:0;
+}
+body::before{ left:0; }
+body::after { right:0; transform:scaleX(-1); }
+/* Hide vines + vertical borders on small screens */
+@media (max-width: 768px) {
+  .vines-left,
+  .vines-right,
+  .vine-border-left,
+  .vine-border-right {
+    display: none !important;
+  }
+}
+/* Hide side vines + vertical borders on small screens */
+@media (max-width: 768px) {
+
+  /* 1) If the vines are <img> files (any filename containing vine/ivy) */
+  img[src*="vine"], img[src*="Vine"],
+  img[src*="ivy"],  img[src*="Ivy"] {
+    display: none !important;
+  }
+
+  /* 2) If the vines are backgrounds on elements */
+  [class*="vine"], [class*="Vine"], [class*="ivy"], [class*="Ivy"] {
+    background: none !important;
+  }
+
+  /* 3) Kill the brown vertical borders regardless of where they live */
+  [class*="border"], [class*="Border"], [class*="divider"], [class*="Divider"] {
+    border: 0 !important;
+    background: none !important;
+    box-shadow: none !important;
+  }
+
+  /* 4) If the center column itself draws the left/right borders */
+  .center, .middle, .main, .content, .container {
+    border-left: 0 !important;
+    border-right: 0 !important;
+    box-shadow: none !important;
+  }
+}
+
+/* Brown vertical lines at vine/content boundary */
+.container::before,
+.container::after{
+  content:"";
+  position:fixed;
+  top:var(--header-h);
+  bottom:0;
+  width:2px;
+  background:var(--panel-border);
+  z-index:1;
+}
+.container::before{
+  left:calc((100vw - min(var(--max), var(--content))) / 2);
+}
+.container::after{
+  right:calc((100vw - min(var(--max), var(--content))) / 2);
+}
+
+/* Announcement image */
+.announcement{margin:6px auto 8px;}
+.pill-image{position:relative;width:min(600px,90%);margin:0 auto;}
+.pill-image img{display:block;width:100%;height:auto;}
+.pill-image .learn-link{
+  position:absolute;bottom:26%;left:50%;transform:translateX(-50%);
+  font-weight:700;font-size:1rem;color:var(--text);text-decoration:none;
+}
 .pill-image .learn-link:hover{text-decoration:underline}
+
+/* Hero */
+.framed{background:var(--bg);padding:18px 0 26px;position:relative;width:min(var(--max),92%);margin:6px auto 28px}
+.eyebrow{text-align:center;font-weight:600;font-size:clamp(18px,2.2vw,28px);margin:1.2rem 0 .2rem;letter-spacing:.04em}
+.headline{text-align:center;font-weight:800;text-transform:uppercase;font-size:clamp(26px,5vw,56px);margin:0 0 12px}
+.headline span{font-weight:800;font-style:italic;text-transform:none}
+
+/* Collections */
+.collections{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,2.4vw,22px);width:min(980px,94%);margin:12px auto 0}
+.card{position:relative;display:flex;align-items:flex-end;justify-content:center;min-height:260px;background:#cbd3bd}
+.card-title{width:100%;text-align:center;padding:.8rem 0;background:rgba(255,255,255,.7);font-family:"Playfair Display",serif;font-weight:700;letter-spacing:.06em}
+
+/* Footer */
 .site-footer{border-top:1px solid #e5d8c8;padding:1rem 0;color:#9b8a74;background:var(--bg);text-align:center}
-.site-footer .social-links{margin-top:8px;display:flex;gap:16px;justify-content:center}
-.site-footer .social-links img{width:24px;height:24px;display:block;transition:transform .2s ease}
-.site-footer .social-links img:hover{transform:scale(1.2)}
+
+footer img {
+  width: 30px;   /* adjust size */
+  height: auto;  /* keep proportions */
+  margin: 0 8px; /* space between icons */
+  vertical-align: middle;
+}
