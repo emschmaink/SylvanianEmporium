@@ -651,17 +651,26 @@ body::after{
 }
 body::before{ left:0; }
 body::after { right:0; transform:scaleX(-1); }
+
 /* Hide vines + vertical borders on small screens */
+/* MOBILE: remove side vines and vertical brown borders */
 @media (max-width: 768px) {
-  .vines-left,
-  .vines-right,
-  .vine-border-left,
-  .vine-border-right {
-    display: none !important;
+  /* stop generating the vine layers */
+  body::before,
+  body::after {
+    content: none !important;   /* hides the pseudo-elements */
   }
+
+  /* stop generating the vertical border lines */
+  .container::before,
+  .container::after {
+    content: none !important;
+  }
+
+  /* optional: if anything relied on those for shadows/borders */
+  .container { box-shadow: none !important; }
 }
-/* Hide side vines + vertical borders on small screens */
-@media (max-width: 768px) {
+
 
   /* 1) If the vines are <img> files (any filename containing vine/ivy) */
   img[src*="vine"], img[src*="Vine"],
