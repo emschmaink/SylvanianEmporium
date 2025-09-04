@@ -652,20 +652,18 @@ body::after{
 body::before{ left:0; }
 body::after { right:0; transform:scaleX(-1); }
 
-/* Hide vines + vertical borders on small screens */
-/* MOBILE: remove side vines and vertical brown borders */
+/* Hide side vines + brown vertical borders ONLY on mobile */
 @media (max-width: 768px) {
-  /* stop generating the vine layers */
   body::before,
   body::after {
-    content: none !important;   /* hides the pseudo-elements */
+    content: none !important; /* vines gone */
   }
 
-  /* stop generating the vertical border lines */
   .container::before,
   .container::after {
-    content: none !important;
+    content: none !important; /* brown lines gone */
   }
+}
 
   /* optional: if anything relied on those for shadows/borders */
   .container { box-shadow: none !important; }
