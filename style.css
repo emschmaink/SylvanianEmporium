@@ -724,6 +724,29 @@ body::after { right:0; transform:scaleX(-1); }
 }
 .pill-image .learn-link:hover{text-decoration:underline}
 
+/* Make top banner + announcement pill bigger on mobile */
+@media (max-width: 768px) {
+  /* Top green header with logo */
+  header, 
+  .site-header {
+    padding: 20px 0 !important;   /* taller top banner */
+  }
+
+  .site-header img,
+  .site-header h1,
+  .site-header .logo {
+    max-width: 90%;   /* scale logo text/image nicely */
+  }
+
+  /* Announcement img (the bar with text + paw) */
+  .announcement,
+  .announcement-bar,
+  .announcement-img {
+    font-size: 1.1rem !important; /* bigger text */
+    padding: 12px 20px !important; /* thicker pill shape */
+  }
+}
+
 /* Hero */
 .framed{background:var(--bg);padding:18px 0 26px;position:relative;width:min(var(--max),92%);margin:6px auto 28px}
 .eyebrow{text-align:center;font-weight:600;font-size:clamp(18px,2.2vw,28px);margin:1.2rem 0 .2rem;letter-spacing:.04em}
