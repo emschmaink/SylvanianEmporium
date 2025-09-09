@@ -160,28 +160,36 @@ a:hover{text-decoration:underline}
 /* ============================
    COLLECTION STYLES
    ============================ */
-/* 2×2 grid for desktop, stack on phones */
-.notebook collections{
+/* 2×2 grid on desktop, stack on phones */
+.collections {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  grid-template-columns: repeat(2, minmax(240px, 1fr));
   gap: 28px;
-  justify-items: center;          /* center each button */
-  max-width: 920px;               /* keep it from stretching too wide */
-  margin: 36px auto;              /* center the whole grid */
+  justify-items: center;
+  align-items: center;
+  max-width: 920px;
+  margin: 36px auto;
 }
 
-/* keep the images from stretching weirdly */
-.notebook-collection-btn{ display:block; }
-.notebook-collection-btn img{
-  display:block;
-  width: clamp(220px, 40vw, 360px); /* sensible min/ideal/max */
+/* ensure anchors behave as blocks */
+.collection-btn {
+  display: block;
+}
+
+/* make images show at a sane size and keep aspect ratio */
+.collection-btn img {
+  display: block;
+  width: 100%;
+  max-width: 360px;   /* cap size so they don’t balloon */
   height: auto;
+  object-fit: contain;
+  visibility: visible; /* guard against any accidental hidden/opacity rules */
 }
 
 /* mobile: single column */
-@media (max-width: 600px){
-  .notebook-collections{ grid-template-columns: 1fr; }
-  .notebook-collection-btn img{ width: clamp(220px, 88vw, 420px); }
+@media (max-width: 600px) {
+  .collections { grid-template-columns: 1fr; }
+  .collection-btn img { max-width: 440px; }
 }
 
 .notebooks-banner {
