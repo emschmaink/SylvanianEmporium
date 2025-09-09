@@ -158,6 +158,50 @@ a:hover{text-decoration:underline}
   .shop-btn img { max-width: 160px; }
 }
 /* ============================
+   COLLECTION STYLES
+   ============================ */
+
+.notebooks-banner {
+  display: block;
+  max-width: 800px;   /* adjust to taste */
+  width: 100%;
+  height: auto;
+  margin: 0 auto 40px; /* centers + spacing below */
+}
+
+/* Responsive shrinking */
+@media (max-width: 600px) {
+  .notebooks-banner {
+    max-width: 400px;
+  }
+}
+@media (max-width: 400px) {
+  .notebooks-banner {
+    max-width: 280px;
+  }
+  
+}
+.notebooks-banner2 {
+  display: block;
+  max-width: 800px;   /* adjust to taste */
+  width: 100%;
+  height: auto;
+  margin: 0 auto 40px; /* centers + spacing below */
+}
+
+/* Responsive shrinking */
+@media (max-width: 600px) {
+  .notebooks-banner2 {
+    max-width: 400px;
+  }
+}
+@media (max-width: 400px) {
+  .notebooks-banner2 {
+    max-width: 280px;
+  }
+}
+
+/* ============================
    SHOP PAGE STYLES
    ============================ */
 /* --- Catalog search UI --- */
