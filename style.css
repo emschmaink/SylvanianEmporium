@@ -62,7 +62,7 @@ a:hover{text-decoration:underline}
   justify-content: center;
   gap: 24px;
   margin: 40px auto;
-  max-width: 800px;
+  max-width: 900px;
 }
 
 /* Collection buttons */
@@ -167,7 +167,7 @@ a:hover{text-decoration:underline}
   gap: 28px;
   justify-items: center;
   align-items: center;
-  max-width: 920px;
+  max-width: 950px;
   margin: 36px auto;
 }
 
@@ -180,7 +180,7 @@ a:hover{text-decoration:underline}
 .collection-btn img {
   display: block;
   width: 100%;
-  max-width: 360px;   /* cap size so they don’t balloon */
+  max-width: 400px;   /* cap size so they don’t balloon */
   height: auto;
   object-fit: contain;
   visibility: visible; /* guard against any accidental hidden/opacity rules */
