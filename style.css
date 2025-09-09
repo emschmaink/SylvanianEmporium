@@ -163,14 +163,15 @@ a:hover{text-decoration:underline}
 .notebook-collections {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 columns */
-  gap: 20px; /* space between buttons, adjust as you like */
-  justify-items: center; /* center the images in each cell */
-  margin: 40px auto;
-  max-width: 800px; /* optional: keeps grid from being super wide */
+  gap: 30px; /* space between the items */
+  justify-items: center; /* center images inside each grid cell */
+  max-width: 900px; /* keeps the grid from being too wide */
+  margin: 40px auto; /* centers grid on page */
 }
 
 .notebook-collection-btn img {
-  max-width: 100%;
+  width: 100%;
+  max-width: 350px; /* limit how big each button image gets */
   height: auto;
   display: block;
 }
