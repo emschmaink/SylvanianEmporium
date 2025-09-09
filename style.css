@@ -232,6 +232,49 @@ a:hover{text-decoration:underline}
   .collections{ grid-template-columns:1fr; }
   .collection-btn img{ width:min(88vw,440px) !important; }
 }
+/* Force collections into 2x2 on desktop */
+.collections {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important; /* exactly 2 per row */
+  gap: 28px !important;
+  justify-items: center;
+  align-items: center;
+  max-width: 920px;
+  margin: 36px auto;
+}
+
+/* collection buttons */
+.collection-btn {
+  display: block;
+}
+
+/* collection images */
+.collection-btn img {
+  display: block !important;
+  width: 100% !important;
+  max-width: 340px !important; /* adjust size as you like */
+  height: auto !important;
+  object-fit: contain !important;
+  transition: transform 0.15s ease, opacity 0.15s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.collection-btn img:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+  box-shadow: 0 0 18px rgba(115, 86, 59, 0.7);
+}
+.collection-btn img:active {
+  transform: scale(0.97);
+}
+
+/* On phones: stack them */
+@media (max-width: 700px) {
+  .collections {
+    grid-template-columns: 1fr !important; /* one per row */
+  }
+}
+
 
 .notebooks-banner {
   display: block;
