@@ -160,7 +160,7 @@ a:hover{text-decoration:underline}
 /* ============================
    COLLECTION STYLES
    ============================ */
-.notebook-collections {
+.notebook-collection-btn img {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 columns */
   gap: 30px; /* space between the items */
