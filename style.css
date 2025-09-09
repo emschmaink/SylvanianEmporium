@@ -191,6 +191,47 @@ a:hover{text-decoration:underline}
   .collections { grid-template-columns: 1fr; }
   .collection-btn img { max-width: 440px; }
 }
+/* -- Collections grid (2×2 desktop, 1×4 mobile) -- */
+.collections{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(240px,1fr));
+  gap:28px;
+  justify-items:center;
+  align-items:center;
+  max-width:920px;
+  margin:36px auto;
+}
+
+/* Make sure anchors behave and contain the image area */
+.collection-btn{ display:block; }
+
+/* HARD OVERRIDES so images actually show */
+.collection-btn img{
+  display:block !important;
+  opacity:1 !important;
+  visibility:visible !important;
+  width:min(100%,360px) !important;
+  height:auto !important;
+  object-fit:contain !important;
+
+  /* Glow effect */
+  transition: transform 0.15s ease, opacity 0.15s ease, box-shadow 0.25s ease;
+  cursor:pointer;
+}
+.collection-btn img:hover{
+  transform:scale(1.05);
+  opacity:0.9;
+  box-shadow:0 0 18px rgba(115,86,59,0.7); /* brownish glow */
+}
+.collection-btn img:active{
+  transform:scale(0.97);
+}
+
+/* Mobile: stack */
+@media (max-width:600px){
+  .collections{ grid-template-columns:1fr; }
+  .collection-btn img{ width:min(88vw,440px) !important; }
+}
 
 .notebooks-banner {
   display: block;
