@@ -160,6 +160,25 @@ a:hover{text-decoration:underline}
 /* ============================
    COLLECTION STYLES
    ============================ */
+.notebook-collections {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  gap: 20px; /* space between buttons, adjust as you like */
+  justify-items: center; /* center the images in each cell */
+  margin: 40px auto;
+  max-width: 800px; /* optional: keeps grid from being super wide */
+}
+
+.notebook-collection-btn img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+@media (max-width: 600px) {
+  .notebook-collections {
+    grid-template-columns: 1fr; /* 1 per row on small screens */
+  }
+}
 
 .notebooks-banner {
   display: block;
