@@ -160,25 +160,28 @@ a:hover{text-decoration:underline}
 /* ============================
    COLLECTION STYLES
    ============================ */
-.notebook-collection-btn img {
+/* 2×2 grid for desktop, stack on phones */
+.notebook collections{
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 columns */
-  gap: 30px; /* space between the items */
-  justify-items: center; /* center images inside each grid cell */
-  max-width: 900px; /* keeps the grid from being too wide */
-  margin: 40px auto; /* centers grid on page */
+  gap: 28px;
+  justify-items: center;          /* center each button */
+  max-width: 920px;               /* keep it from stretching too wide */
+  margin: 36px auto;              /* center the whole grid */
 }
 
-.notebook-collection-btn img {
-  width: 100%;
-  max-width: 350px; /* limit how big each button image gets */
+/* keep the images from stretching weirdly */
+.notebook-collection-btn{ display:block; }
+.notebook-collection-btn img{
+  display:block;
+  width: clamp(220px, 40vw, 360px); /* sensible min/ideal/max */
   height: auto;
-  display: block;
 }
-@media (max-width: 600px) {
-  .notebook-collections {
-    grid-template-columns: 1fr; /* 1 per row on small screens */
-  }
+
+/* mobile: single column */
+@media (max-width: 600px){
+  .notebook-collections{ grid-template-columns: 1fr; }
+  .notebook-collection-btn img{ width: clamp(220px, 88vw, 420px); }
 }
 
 .notebooks-banner {
