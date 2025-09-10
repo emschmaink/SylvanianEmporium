@@ -4,40 +4,64 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Shop — Sylvanian Emporium</title>
-  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
   <header class="site-header">
-    <img class="full-header" src="./assets/header.png" alt="Sylvanian Emporium">
+    <img class="full-header" src="/assets/header.png" alt="Sylvanian Emporium">
     <nav class="main-nav">
-      <a href="./index.html">Home</a>
-      <a href="./nav/shop.html" aria-current="page">Shop</a>
-      <a href="./nav/about.html">About</a>
-      <a href="./nav/faq.html">FAQ</a>
-      <a href="./nav/contact.html">Contact</a>
+      <a href="/index.html">Home</a>
+      <a href="/nav/shop.html" aria-current="page">Shop</a>
+      <a href="/nav/about.html">About</a>
+      <a href="/nav/faq.html">FAQ</a>
+      <a href="/nav/contact.html">Contact</a>
     </nav>
   </header>
 
-    <main id="main">
+  <main id="main">
     <section class="announcement container">
       <div class="pill-image">
-        <img src="./assets/announcement.png" alt="Your order could make an impact!">
+        <img src="/assets/announcement.png" alt="Your order could make an impact!">
       </div>
     </section>
 
-<main class="shop-wrap">
+    <!-- use a section/div here (no nested <main>) -->
+    <section class="shop-wrap">
 
-  <section class="catalog-search">
-    <label class="sr-only" for="q">Search products</label>
-    <input id="q" class="search-input" type="search"
-           placeholder="Search notebooks, bookmarks, keychains…" autocomplete="off">
+      <section class="catalog-search">
+        <label class="sr-only" for="q">Search products</label>
+        <input id="q" class="search-input" type="search"
+               placeholder="Search notebooks, bookmarks, keychains…" autocomplete="off">
+      </section>
 
-  <!-- results come AFTER the catalog-search section -->
-  <div id="results" class="results" aria-live="polite"></div>
+      <!-- results come AFTER the catalog-search section -->
+      <div id="results" class="results" aria-live="polite"></div>
+
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> Sylvanian Emporium</small>
+      <div class="social-links">
+        <a href="https://www.etsy.com/shop/SYLVANIANEMPORIUM" target="_blank" rel="noopener">
+          <img src="/assets/etsy.png" alt="Etsy">
+        </a>
+        <a href="https://instagram.com/SYLVANIAN.EMPORIUM" target="_blank" rel="noopener">
+          <img src="/assets/instagram.png" alt="Instagram">
+        </a>
+        <a href="https://discord.gg/tVnAVeVzAV" target="_blank" rel="noopener">
+          <img src="/assets/discord.png" alt="Discord">
+        </a>
+      </div>
+    </div>
+  </footer>
 
   <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
     async function loadCatalog() {
-      const res = await fetch('./assets/products.json', {cache: 'no-store'});
+      const res = await fetch('/assets/products.json', { cache: 'no-store' });
       if (!res.ok) throw new Error('Could not load products.json');
       return res.json();
     }
@@ -82,9 +106,9 @@
       function runSearch(){
         const q = input.value.trim();
         const qn = norm(q);
-        const minP = parsePrice(minPriceEl.value);
-        const maxP = parsePrice(maxPriceEl.value);
-        const sortMode = sortByEl.value;
+        const minP = minPriceEl ? parsePrice(minPriceEl.value) : null;
+        const maxP = maxPriceEl ? parsePrice(maxPriceEl.value) : null;
+        const sortMode = sortByEl ? sortByEl.value : 'newest';
         let items = data.slice();
         if (currentType !== 'all') items = items.filter(p => p.type === currentType);
         if (minP != null) items = items.filter(p => Number(p.price) >= minP);
@@ -101,9 +125,9 @@
       const debounce=(fn,ms=120)=>{let t;return(...a)=>{clearTimeout(t);t=setTimeout(()=>fn(...a),ms);};};
       const doSearch = debounce(runSearch, 120);
       input.addEventListener('input', doSearch);
-      minPriceEl.addEventListener('input', doSearch);
-      maxPriceEl.addEventListener('input', doSearch);
-      sortByEl.addEventListener('change', runSearch);
+      if (minPriceEl) minPriceEl.addEventListener('input', doSearch);
+      if (maxPriceEl) maxPriceEl.addEventListener('input', doSearch);
+      if (sortByEl)   sortByEl.addEventListener('change', runSearch);
       chips.forEach(chip=>{
         chip.addEventListener('click', ()=>{
           chips.forEach(c=>c.classList.remove('is-active'));
@@ -115,26 +139,5 @@
       runSearch();
     })();
   </script>
-
-</main>
-     
-<footer class="site-footer">
-  <div class="container">
-    <small>© <span id="year"></span> Sylvanian Emporium</small>
-    <div class="social-links">
-      <a href="https://www.etsy.com/shop/SYLVANIANEMPORIUM" target="_blank" rel="noopener">
-        <img src="./assets/etsy.png" alt="Etsy">
-      </a>
-      <a href="https://instagram.com/SYLVANIAN.EMPORIUM" target="_blank" rel="noopener">
-        <img src="./assets/instagram.png" alt="Instagram">
-      </a>
-      <a href="https://discord.gg/tVnAVeVzAV" target="_blank" rel="noopener">
-        <img src="./assets/discord.png" alt="Discord">
-      </a>
-    </div>
-  </div>
-</footer>
-
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
