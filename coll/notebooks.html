@@ -3,55 +3,74 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sylvanian Emporium — Home</title>
-  <link rel="stylesheet" href="./style.css" />
+  <title>Notebook Collections — Sylvanian Emporium</title>
+  <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
   <header class="site-header">
-    <img class="full-header" src="./assets/header.png" alt="Sylvanian Emporium">
- <nav class="main-nav">
-  <a href="./index.html">Home</a>
-  <a href="./nav/shop.html">Shop</a>
-  <a href="./nav/about.html">About</a>
-  <a href="./nav/faq.html">FAQ</a>
-  <a href="./nav/contact.html">Contact</a>
-</nav>
+    <img class="full-header" src="/assets/header.png" alt="Sylvanian Emporium">
+    <nav class="main-nav">
+      <a href="/index.html">Home</a>
+      <a href="/nav/shop.html">Shop</a>
+      <a href="/nav/about.html">About</a>
+      <a href="/nav/faq.html">FAQ</a>
+      <a href="/nav/contact.html">Contact</a>
+    </nav>
   </header>
 
- <main id="main">
+  <main id="main">
     <section class="announcement container">
       <div class="pill-image">
-        <img src="./assets/announcement.png" alt="Your order could make an impact!">
+        <img src="/assets/announcement.png" alt="Your order could make an impact!">
       </div>
     </section>
   
-  <!-- Notebooks top banner -->
-<img src="./assets/notebooks-banner.png" 
-     alt="Notebook Collections" 
-     class="notebooks-banner">
+    <!-- Notebooks top banner -->
+    <img src="/assets/notebooks-banner.png" 
+         alt="Notebook Collections" 
+         class="notebooks-banner">
 
-<section class="notebook collections">
-  <a href="/coll/moonlight.html" class="collection-btn">
-    <img src="/assets/moonlight.png?v=2" alt="Shop Moonlight Collection" loading="lazy">
-  </a>
-  <a href="/coll/sunlight.html" class="collection-btn">
-    <img src="/assets/sunlight.png?v=2" alt="Shop Sunlight Collection" loading="lazy">
-  </a>
-  <a href="/coll/woodlands.html" class="collection-btn">
-    <img src="/assets/woodlands.png?v=2" alt="Shop Woodlands Collection" loading="lazy">
-  </a>
-  <a href="/coll/meadows.html" class="collection-btn">
-    <img src="/assets/meadows.png?v=2" alt="Shop Meadows Collection" loading="lazy">
-  </a>
-</section>
+    <section class="notebook collections">
+      <a href="/coll/moonlight.html" class="collection-btn">
+        <img src="/assets/moonlight.png?v=2" alt="Shop Moonlight Collection" loading="lazy">
+      </a>
+      <a href="/coll/sunlight.html" class="collection-btn">
+        <img src="/assets/sunlight.png?v=2" alt="Shop Sunlight Collection" loading="lazy">
+      </a>
+      <a href="/coll/woodlands.html" class="collection-btn">
+        <img src="/assets/woodlands.png?v=2" alt="Shop Woodlands Collection" loading="lazy">
+      </a>
+      <a href="/coll/meadows.html" class="collection-btn">
+        <img src="/assets/meadows.png?v=2" alt="Shop Meadows Collection" loading="lazy">
+      </a>
+    </section>
 
+    <!-- Notebooks bottom banner -->
+    <img src="/assets/notebooks-banner2.png" 
+         alt="Notebook Footer" 
+         class="notebooks-banner2">
+  </main>
    
-   <!-- Notebooks bottom banner -->
-<img src="./assets/notebooks-banner2.png" 
-     alt="Notebook Footer" 
-     class="notebooks-banner2">
-   
-   </footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> Sylvanian Emporium</small>
+      <div class="social-links">
+        <a href="https://www.etsy.com/shop/SYLVANIANEMPORIUM" target="_blank" rel="noopener">
+          <img src="/assets/etsy.png" alt="Etsy">
+        </a>
+        <a href="https://instagram.com/SYLVANIAN.EMPORIUM" target="_blank" rel="noopener">
+          <img src="/assets/instagram.png" alt="Instagram">
+        </a>
+        <a href="https://discord.gg/tVnAVeVzAV" target="_blank" rel="noopener">
+          <img src="/assets/discord.png" alt="Discord">
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
+
