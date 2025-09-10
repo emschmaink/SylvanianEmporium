@@ -98,6 +98,20 @@ a:hover{text-decoration:underline}
     max-width: 160px;
   }
 }
+/* Homepage collection buttons layout */
+.collections {
+  display: flex;
+  justify-content: center; /* center them horizontally */
+  gap: 12px;               /* reduce gap (default might be bigger) */
+  flex-wrap: wrap;         /* wrap onto new line if needed */
+}
+
+.collection-btn img {
+  max-width: 220px;  /* shrink if they feel too far apart */
+  height: auto;
+  display: block;
+}
+
 /* Index banners */
 .index-banner,
 .index-banner2 {
