@@ -76,15 +76,20 @@ a:hover{text-decoration:underline}
   cursor: pointer;
 }
 
-/* Hover glow — matches FAQ + Send buttons */
-.collection-btn img:hover {
-  transform: scale(1.05);
-  opacity: 0.9;
-  box-shadow: 0 0 14px rgba(115, 86, 59, 0.7);
+/* Homepage collections row (two buttons side by side) */
+.collections {
+  display: flex;
+  justify-content: center;   /* center the pair */
+  align-items: center;
+  gap: 20px;                 /* adjust: smaller number = closer together */
+  margin: 30px auto;
 }
 
-.collection-btn img:active {
-  transform: scale(0.97);
+.collection-btn img {
+  max-width: 240px;  /* reduce width so they don't push apart */
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* Responsive sizes (same breakpoints as FAQ + Send) */
