@@ -4,41 +4,46 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About — Sylvanian Emporium</title>
-  <link rel="stylesheet" href="./style.css" />
+  <!-- root-relative path to CSS -->
+  <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
   <header class="site-header">
-    <img class="full-header" src="./assets/header.png" alt="Sylvanian Emporium">
+    <!-- root-relative path to header image -->
+    <img class="full-header" src="/assets/header.png" alt="Sylvanian Emporium">
     <nav class="main-nav">
-      <a href="./index.html">Home</a>
-      <a href="./nav/shop.html">Shop</a>
-      <a href="./nav/about.html" aria-current="page">About</a>
-      <a href="./nav/faq.html">FAQ</a>
-      <a href="./nav/contact.html">Contact</a>
+      <!-- all links point to the root, not relative -->
+      <a href="/index.html">Home</a>
+      <a href="/nav/shop.html">Shop</a>
+      <a href="/nav/about.html" aria-current="page">About</a>
+      <a href="/nav/faq.html">FAQ</a>
+      <a href="/nav/contact.html">Contact</a>
     </nav>
   </header>
 
   <main class="about-img">
-  <img src="./assets/about-page.png" alt="About Sylvanian Emporium details" />
-</main>
+    <img src="/assets/about-page.png" alt="About Sylvanian Emporium details" />
+  </main>
      
-<footer class="site-footer">
-  <div class="container">
-    <small>© <span id="year"></span> Sylvanian Emporium</small>
-    <div class="social-links">
-      <a href="https://www.etsy.com/shop/SYLVANIANEMPORIUM" target="_blank" rel="noopener">
-        <img src="./assets/etsy.png" alt="Etsy">
-      </a>
-      <a href="https://instagram.com/SYLVANIAN.EMPORIUM" target="_blank" rel="noopener">
-        <img src="./assets/instagram.png" alt="Instagram">
-      </a>
-      <a href="https://discord.gg/tVnAVeVzAV" target="_blank" rel="noopener">
-        <img src="./assets/discord.png" alt="Discord">
-      </a>
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> Sylvanian Emporium</small>
+      <div class="social-links">
+        <a href="https://www.etsy.com/shop/SYLVANIANEMPORIUM" target="_blank" rel="noopener">
+          <img src="/assets/etsy.png" alt="Etsy">
+        </a>
+        <a href="https://instagram.com/SYLVANIAN.EMPORIUM" target="_blank" rel="noopener">
+          <img src="/assets/instagram.png" alt="Instagram">
+        </a>
+        <a href="https://discord.gg/tVnAVeVzAV" target="_blank" rel="noopener">
+          <img src="/assets/discord.png" alt="Discord">
+        </a>
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
