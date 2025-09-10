@@ -81,12 +81,12 @@ a:hover{text-decoration:underline}
   display: flex;
   justify-content: center;   /* center the pair */
   align-items: center;
-  gap: 20px;                 /* adjust: smaller number = closer together */
+  gap: 5px;                 /* adjust: smaller number = closer together */
   margin: 30px auto;
 }
 
 .collection-btn img {
-  max-width: 240px;  /* reduce width so they don't push apart */
+  max-width: 230px;  /* reduce width so they don't push apart */
   width: 100%;
   height: auto;
   display: block;
