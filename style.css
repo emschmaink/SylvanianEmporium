@@ -335,6 +335,46 @@ a:hover{text-decoration:underline}
   }
 }
 
+.keychains-banner {
+  display: block;
+  max-width: 800px;   /* adjust to taste */
+  width: 100%;
+  height: auto;
+  margin: 0 auto 40px; /* centers + spacing below */
+}
+
+/* Responsive shrinking */
+@media (max-width: 600px) {
+  .keychains-banner {
+    max-width: 400px;
+  }
+}
+@media (max-width: 400px) {
+  .keychains-banner {
+    max-width: 280px;
+  }
+  
+}
+.keychains-banner2 {
+  display: block;
+  max-width: 800px;   /* adjust to taste */
+  width: 100%;
+  height: auto;
+  margin: 0 auto 40px; /* centers + spacing below */
+}
+
+/* Responsive shrinking */
+@media (max-width: 600px) {
+  .keychains-banner2 {
+    max-width: 400px;
+  }
+}
+@media (max-width: 400px) {
+  .keychains-banner2 {
+    max-width: 280px;
+  }
+}
+
 /* ============================
    SHOP PAGE STYLES
    ============================ */
