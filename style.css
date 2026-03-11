@@ -335,7 +335,7 @@ a:hover{text-decoration:underline}
   }
 }
 
-.keychains-banner {
+.planners-banner {
   display: block;
   max-width: 800px;   /* adjust to taste */
   width: 100%;
@@ -345,17 +345,17 @@ a:hover{text-decoration:underline}
 
 /* Responsive shrinking */
 @media (max-width: 600px) {
-  .keychains-banner {
+  .planners-banner {
     max-width: 400px;
   }
 }
 @media (max-width: 400px) {
-  .keychains-banner {
+  .planners-banner {
     max-width: 280px;
   }
   
 }
-.keychains-banner2 {
+.notebooks-banner2 {
   display: block;
   max-width: 800px;   /* adjust to taste */
   width: 100%;
@@ -365,12 +365,12 @@ a:hover{text-decoration:underline}
 
 /* Responsive shrinking */
 @media (max-width: 600px) {
-  .keychains-banner2 {
+  .notebooks-banner2 {
     max-width: 400px;
   }
 }
 @media (max-width: 400px) {
-  .keychains-banner2 {
+  .notebooks-banner2 {
     max-width: 280px;
   }
 }
