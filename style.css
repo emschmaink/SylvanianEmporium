@@ -157,62 +157,59 @@ h1,h2,h3{
 
 /* CONTACT FORM */
 
-form {
-  max-width: 520px;
-  margin: 2rem auto;
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
+.contact-form{
+  max-width:520px;
+  margin:2rem auto;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
 }
 
-form label {
-  font-family: "Libre Baskerville", serif;
-  font-size: 0.95rem;
-  margin-top: 1rem;
-  color: var(--ink);
+.contact-form input,
+.contact-form textarea{
+  width:100%;
+  padding:14px 16px;
+  border-radius:6px;
+  border:1px solid var(--line);
+  background:white;
+  font-family:"Libre Baskerville", serif;
+  font-size:0.95rem;
 }
 
-form input,
-form textarea {
-  padding: 10px 12px;
-  border-radius: 6px;
-  border: 1px solid var(--line);
-  background: var(--cream);
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1rem;
-  transition: all 0.25s ease;
+.contact-form textarea{
+  min-height:140px;
+  resize:vertical;
 }
 
-form textarea {
-  min-height: 120px;
-  resize: vertical;
+/* placeholder styling */
+.contact-form ::placeholder{
+  color:#8a8a8a;
+  font-family:"Libre Baskerville", serif;
 }
 
-/* Elegant focus effect */
-form input:focus,
-form textarea:focus {
-  outline: none;
-  border-color: var(--sage);
-  box-shadow: 0 0 0 2px rgba(136,138,101,.15);
+/* focus effect */
+.contact-form input:focus,
+.contact-form textarea:focus{
+  outline:none;
+  border-color:var(--sage);
+  box-shadow:0 0 0 2px rgba(136,138,101,.15);
 }
 
-/* Button styling */
-form button {
-  margin-top: 1.2rem;
-  padding: 10px;
-  border-radius: 6px;
-  border: none;
-  background: var(--sage);
-  color: white;
-  font-family: "Libre Baskerville", serif;
-  letter-spacing: 0.05em;
-  cursor: pointer;
-  transition: background .25s ease, transform .15s ease;
+/* button */
+.contact-form button{
+  margin-top:10px;
+  padding:12px;
+  border:none;
+  border-radius:6px;
+  background:var(--sage);
+  color:white;
+  font-family:"Libre Baskerville", serif;
+  letter-spacing:.05em;
+  cursor:pointer;
 }
 
-form button:hover {
-  background: var(--sage-dark);
-  transform: translateY(-1px);
+.contact-form button:hover{
+  background:var(--sage-dark);
 }
 
 /* FOOTER */
