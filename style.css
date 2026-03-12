@@ -154,45 +154,65 @@ h1,h2,h3{
   margin-top:10px;
 }
 
+
 /* CONTACT FORM */
 
 form {
   max-width: 520px;
-  margin: auto;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
 }
 
-label {
-  display: block;
-  margin-top: 1.2rem;
-  font-weight: 500;
+form label {
+  font-family: "Libre Baskerville", serif;
+  font-size: 0.95rem;
+  margin-top: 1rem;
+  color: var(--ink);
 }
 
-input,
-textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid var(--line);
+form input,
+form textarea {
+  padding: 10px 12px;
   border-radius: 6px;
+  border: 1px solid var(--line);
   background: var(--cream);
-  font-family: inherit;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1rem;
+  transition: all 0.25s ease;
 }
 
-textarea {
+form textarea {
   min-height: 120px;
+  resize: vertical;
 }
 
-button {
+/* Elegant focus effect */
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border-color: var(--sage);
+  box-shadow: 0 0 0 2px rgba(136,138,101,.15);
+}
+
+/* Button styling */
+form button {
   margin-top: 1.2rem;
-  padding: 10px 20px;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
   background: var(--sage);
   color: white;
-  border: none;
-  border-radius: 6px;
+  font-family: "Libre Baskerville", serif;
+  letter-spacing: 0.05em;
   cursor: pointer;
+  transition: background .25s ease, transform .15s ease;
 }
 
-button:hover {
+form button:hover {
   background: var(--sage-dark);
+  transform: translateY(-1px);
 }
 
 /* FOOTER */
