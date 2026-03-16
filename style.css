@@ -154,6 +154,55 @@ h1,h2,h3{
   margin-top:10px;
 }
 
+.collection{
+max-width:1000px;
+margin:auto;
+text-align:center;
+padding:40px 20px;
+}
+
+.collection-title{
+font-size:32px;
+margin-bottom:40px;
+}
+
+.product-grid{
+display:grid;
+grid-template-columns:repeat(3, 1fr);
+gap:35px;
+}
+
+/* PRODUCT CARD */
+
+.product-card{
+text-decoration:none;
+color:var(--ink);
+display:block;
+}
+
+.product-card img{
+width:100%;
+border-radius:14px;
+display:block;
+}
+
+.product-card h3{
+font-size:16px;
+margin-top:12px;
+font-weight:normal;
+}
+
+/* PRICE BUTTON */
+
+.price{
+display:inline-block;
+margin-top:8px;
+background:var(--sage);
+color:white;
+padding:6px 18px;
+border-radius:20px;
+font-size:14px;
+}
 
 /* CONTACT FORM */
 
