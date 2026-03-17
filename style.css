@@ -240,6 +240,12 @@ cursor:pointer;
   margin-top:10px;
 }
 
+.collection-card {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
 .collection{
 max-width:1000px;
 margin:auto;
