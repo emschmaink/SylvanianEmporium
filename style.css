@@ -219,11 +219,10 @@ cursor:pointer;
   margin-top:80px;
 }
 
-.collection-grid{
-  display:flex;
-  justify-content:center;
-  gap:90px;
-  margin-top:40px;
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  gap: 20px;
 }
 
 .collection-card img{
