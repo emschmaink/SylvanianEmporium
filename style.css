@@ -221,8 +221,9 @@ cursor:pointer;
 
 .collection-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 220px); /* fixed card width */
   gap: 20px;
+  justify-content: center; /* centers the whole grid */
 }
 
 @media (max-width: 600px) {
