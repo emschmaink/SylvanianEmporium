@@ -11,3 +11,10 @@ function changeImage(element) {
   // add active to clicked
   element.classList.add("active");
 }
+
+window.onload = function () {
+  const firstThumb = document.querySelector(".thumb");
+  if (firstThumb) {
+    changeImage(firstThumb);
+  }
+};
