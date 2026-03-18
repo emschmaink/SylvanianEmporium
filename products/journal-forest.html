@@ -68,67 +68,55 @@
 
   <div class="product-layout">
 
+    <!-- LEFT: GALLERY -->
     <div class="product-gallery">
 
-<img id="mainImage" src="../images/fc1.png" class="main-product-image">
+      <img id="mainImage" src="../images/fc1.png" class="main-product-image">
 
-<div class="thumbnail-row">
+      <div class="thumbnail-row">
+        <img src="../images/fc1.png" class="thumb active" onclick="changeImage(this)">
+        <img src="../images/fc2.png" class="thumb" onclick="changeImage(this)">
+        <img src="../images/fc3.png" class="thumb" onclick="changeImage(this)">
+        <img src="../images/fc4.png" class="thumb" onclick="changeImage(this)">
+        <img src="../images/fc5.png" class="thumb" onclick="changeImage(this)">
+        <img src="../images/fc6.png" class="thumb" onclick="changeImage(this)">
+      </div>
 
-<img src="../images/fc1.png" class="thumb active" onclick="changeImage(this)">
-<img src="../images/fc2.png" class="thumb" onclick="changeImage(this)">
-<img src="../images/fc3.png" class="thumb" onclick="changeImage(this)">
-<img src="../images/fc4.png" class="thumb" onclick="changeImage(this)">
-<img src="../images/fc5.png" class="thumb" onclick="changeImage(this)">
-<img src="../images/fc6.png" class="thumb" onclick="changeImage(this)">
+    </div> <!-- 👈 THIS WAS MISSING -->
 
-</div>
+    <!-- RIGHT: INFO -->
+    <div class="product-info">
 
-  <!-- PRODUCT INFO -->
-<div class="product-info">
+      <h1>Forest Creatures Journal</h1>
 
-<h1>Forest Creatures Journal</h1>
+      <h3>Options</h3>
 
-<h3>Options</h3>
+      <div class="color-options">
+        <span class="color-circle"></span>
+        <span class="color-circle"></span>
+        <span class="color-circle"></span>
+        <span class="color-circle"></span>
+      </div>
 
-<div class="color-options">
+      <button class="cart-btn">$28.00 Add to Cart</button>
+      <button class="favorites-btn">Favorite ♡</button>
 
-<span class="color-circle"></span>
-<span class="color-circle"></span>
-<span class="color-circle"></span>
-<span class="color-circle"></span>
+      <p class="product-description">
+        Take notes in a whimsical way with our Forest Creatures journal. Packed with beautiful designs and simple lined pages, the freedom is yours to capture what makes your heart flutter!
+      </p>
 
-</div>
+      <ul class="product-details">
+        <li>Size: 6 x 9 inches</li>
+        <li>Pages: 200 lined</li>
+        <li>Interior: B&W</li>
+        <li>Cover: Hardcover</li>
+      </ul>
 
-<div class="binding-options">
+    </div>
 
-<label><input type="radio" name="binding"> Hardcover</label>
-<label><input type="radio" name="binding"> Spiral Bound</label>
+  </div>
 
-</div>
-
-<button class="cart-btn">$28.00 Add to Cart</button>
-
-<button class="favorites-btn">Favorite ♡</button>
-
-<p class="product-description">
-
-Take notes in a whimsical way with our Forest Creatures journal. Packed with beautiful designs and simple lined pages, the freedom is yours to capture what makes your heart flutter!
-
-</p>
-
-<ul class="product-details">
-
-<li>Size: 6 x 9 inches</li>
-<li>Pages: 200 lined</li>
-<li>Interior: B&W</li>
-<li>Cover: Hardcover or Spiral</li>
-
-</ul>
-
-</div>
-
-</div>
-  </section>
+</section>
 
 <script src="../product-gallery.js"></script>
 
