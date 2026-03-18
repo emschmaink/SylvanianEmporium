@@ -105,32 +105,36 @@ h1,h2,h3{
 
 .product-layout{
   display:grid;
-  grid-template-columns: 300px 1fr; /* 👈 controls gallery size */
-  gap:60px;
-  max-width:1000px;
+  grid-template-columns: 360px 1fr; /* slightly smaller gallery */
+  gap:50px;
+  max-width:900px; /* 👈 tighter overall width */
   margin:auto;
-  padding:40px;
+  padding:30px 20px;
+  align-items:start; /* 👈 aligns top nicely */
+}
+
+.product-gallery{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
 }
 
 .main-product-image{
   width:100%;
-  max-width:300px; /* 👈 stops it from getting huge */
-  border-radius:14px;
+  max-width:360px;
+  border-radius:18px;
 }
 
 .thumbnail-row{
   display:grid;
   grid-template-columns:repeat(4, 1fr);
-  gap:8px;
-  max-width:300px; /* 👈 keeps them aligned with main image */
+  gap:10px;
+  margin-top:12px;
+  max-width:360px;
 }
 
 .thumb{
-  width:100%;
-  border-radius:8px;
-  cursor:pointer;
-  opacity:0.8;
-  transition:0.2s;
+  border-radius:10px;
 }
 
 .thumb:hover{
@@ -143,9 +147,19 @@ h1,h2,h3{
   outline:2px solid var(--sage);
 }
 
+.product-info{
+  text-align:left; /* 👈 matches reference */
+  max-width:420px;
+}
+
 .product-info h1{
-font-size:32px;
-margin-bottom:20px;
+  font-size:30px;
+  margin-bottom:10px;
+}
+
+.price{
+  font-size:24px;
+  margin-bottom:18px;
 }
 
 .color-options{
@@ -174,24 +188,28 @@ font-size:28px;
 margin-bottom:20px;
 }
 
-.purchase-btn{
-background:#8a8f6a;
-color:white;
-padding:12px 28px;
-border-radius:30px;
-border:none;
-font-size:16px;
-cursor:pointer;
-margin-bottom:10px;
+.cart-btn{
+  background:var(--sage);
+  color:white;
+  padding:14px 40px;
+  border-radius:40px;
+  border:none;
+  font-size:18px;
+  cursor:pointer;
+  margin:15px 0 10px;
+  width:100%; /* 👈 full width like reference */
+  max-width:260px;
 }
 
-.cart-btn{
-background:transparent;
-border:2px solid #8a8f6a;
-color:#8a8f6a;
-padding:10px 28px;
-border-radius:30px;
-cursor:pointer;
+.favorites-btn{
+  background:transparent;
+  border:2px solid var(--sage);
+  color:var(--sage);
+  padding:12px 40px;
+  border-radius:40px;
+  cursor:pointer;
+  width:100%;
+  max-width:260px;
 }
 
 /* SALE IMAGE */
