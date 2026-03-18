@@ -104,24 +104,25 @@ h1,h2,h3{
 }
 
 .product-layout{
-display:grid;
-grid-template-columns: 1fr 1fr;
-gap:60px;
-max-width:1000px;
-margin:auto;
-padding:40px;
+  display:grid;
+  grid-template-columns: 400px 1fr; /* 👈 controls gallery size */
+  gap:60px;
+  max-width:1000px;
+  margin:auto;
+  padding:40px;
 }
 
 .main-product-image{
-width:100%;
-border-radius:14px;
+  width:100%;
+  max-width:400px; /* 👈 stops it from getting huge */
+  border-radius:14px;
 }
 
 .thumbnail-row{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:10px;
-margin-top:15px;
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:8px;
+  max-width:400px; /* 👈 keeps them aligned with main image */
 }
 
 .thumb{
