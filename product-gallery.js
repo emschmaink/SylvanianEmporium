@@ -1,7 +1,13 @@
-function changeImage(element){
+}
+function changeImage(element) {
+  // change main image
+  document.getElementById("mainImage").src = element.src;
 
-const mainImage = document.getElementById("mainImage");
+  // remove active from all
+  document.querySelectorAll(".thumb").forEach(img => {
+    img.classList.remove("active");
+  });
 
-mainImage.src = element.src;
-
+  // add active to clicked
+  element.classList.add("active");
 }
