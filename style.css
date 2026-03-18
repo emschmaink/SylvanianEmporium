@@ -105,12 +105,12 @@ h1,h2,h3{
 
 .product-layout{
   display:grid;
-  grid-template-columns: 360px 1fr; /* slightly smaller gallery */
-  gap:50px;
-  max-width:900px; /* 👈 tighter overall width */
+  grid-template-columns: 320px 1fr; /* 👈 smaller gallery */
+  gap:40px;
+  max-width:850px; /* 👈 tighter page */
   margin:auto;
   padding:30px 20px;
-  align-items:start; /* 👈 aligns top nicely */
+  align-items:start;
 }
 
 .product-gallery{
@@ -120,17 +120,14 @@ h1,h2,h3{
 }
 
 .main-product-image{
-  width:100%;
-  max-width:360px;
+  max-width:320px;
   border-radius:18px;
 }
 
 .thumbnail-row{
-  display:grid;
-  grid-template-columns:repeat(4, 1fr);
-  gap:10px;
-  margin-top:12px;
-  max-width:360px;
+  grid-template-columns:repeat(3, 1fr); /* 👈 cleaner grid */
+  gap:8px;
+  max-width:320px;
 }
 
 .thumb{
@@ -148,13 +145,18 @@ h1,h2,h3{
 }
 
 .product-info{
-  text-align:left; /* 👈 matches reference */
-  max-width:420px;
+  text-align:left;
+  max-width:380px;
 }
 
 .product-info h1{
-  font-size:30px;
-  margin-bottom:10px;
+  font-size:28px;
+  margin-bottom:8px;
+}
+
+.product-info h3{
+  margin-top:15px;
+  margin-bottom:8px;
 }
 
 .price{
@@ -177,16 +179,15 @@ cursor:pointer;
 }
 
 .product-description{
-  margin-top:25px;
+  margin-top:20px;
   font-size:16px;
-  line-height:1.6;
+  line-height:1.5;
   text-align:center;
 }
 
 .product-details{
-  margin-top:20px;
-  text-align:center;
-  list-style:none;
+  margin-top:15px;
+  line-height:1.6;
   padding:0;
 }
 
@@ -195,28 +196,20 @@ font-size:28px;
 margin-bottom:20px;
 }
 
-.cart-btn{
-  background:var(--sage);
-  color:white;
-  padding:14px 40px;
-  border-radius:40px;
-  border:none;
-  font-size:18px;
-  cursor:pointer;
-  margin:15px 0 10px;
-  width:100%; /* 👈 full width like reference */
-  max-width:260px;
+.cart-btn,
+.favorites-btn{
+  width:100%;
+  max-width:240px;
+  display:block;
+  margin:10px 0;
+  padding:14px;
+  border-radius:30px;
 }
 
 .favorites-btn{
   background:transparent;
   border:2px solid var(--sage);
   color:var(--sage);
-  padding:12px 40px;
-  border-radius:40px;
-  cursor:pointer;
-  width:100%;
-  max-width:260px;
 }
 
 /* SALE IMAGE */
