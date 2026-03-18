@@ -120,14 +120,15 @@ h1,h2,h3{
 }
 
 .main-product-image{
-  max-width:320px;
-  border-radius:18px;
+  width:100%;
+  max-width:380px;
+  border-radius:16px;
 }
 
 .thumbnail-row{
-  grid-template-columns:repeat(3, 1fr); /* 👈 cleaner grid */
-  gap:8px;
-  max-width:320px;
+  grid-template-columns:repeat(4, 1fr);
+  gap:10px;
+  max-width:380px;
 }
 
 .thumb{
@@ -146,12 +147,16 @@ h1,h2,h3{
 
 .product-info{
   text-align:left;
-  max-width:380px;
+  max-width:420px;
 }
 
 .product-info h1{
-  font-size:28px;
-  margin-bottom:8px;
+  margin-bottom:10px;
+}
+
+.product-description{
+  margin-top:25px;
+  line-height:1.6;
 }
 
 .product-info h3{
@@ -178,13 +183,6 @@ background:#b48d65;
 cursor:pointer;
 }
 
-.product-description{
-  margin-top:20px;
-  font-size:16px;
-  line-height:1.5;
-  text-align:center;
-}
-
 .product-details{
   margin-top:15px;
   line-height:1.6;
@@ -196,14 +194,27 @@ font-size:28px;
 margin-bottom:20px;
 }
 
-.cart-btn,
-.favorites-btn{
-  width:100%;
-  max-width:240px;
-  display:block;
-  margin:10px 0;
-  padding:14px;
+.cart-btn{
+  background:var(--sage);
+  color:white;
+  padding:14px 30px;
   border-radius:30px;
+  border:none;
+  font-size:16px;
+  cursor:pointer;
+  margin:15px 0 10px;
+  width:260px; /* 👈 fixed width instead of full stretch */
+  text-align:center;
+}
+
+.favorites-btn{
+  background:transparent;
+  border:2px solid var(--sage);
+  color:var(--sage);
+  padding:12px 30px;
+  border-radius:30px;
+  cursor:pointer;
+  width:260px;
 }
 
 .favorites-btn{
