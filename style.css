@@ -105,11 +105,11 @@ h1,h2,h3{
 
 .product-layout{
   display:grid;
-  grid-template-columns: 320px 1fr; /* 👈 smaller gallery */
-  gap:40px;
-  max-width:850px; /* 👈 tighter page */
-  margin:auto;
-  padding:30px 20px;
+  grid-template-columns: 360px 360px; /* 👈 equal columns */
+  justify-content:center;
+  gap:60px;
+  max-width:900px;
+  margin:60px auto;
   align-items:start;
 }
 
@@ -119,27 +119,37 @@ h1,h2,h3{
   align-items:center;
 }
 
+/* 👇 LOCK the main image size */
 .main-product-image{
-  width:100%;
-  max-width:380px;
+  width:360px;
+  height:360px;
+  object-fit:cover;
   border-radius:16px;
 }
 
+/* 👇 THIS WAS BROKEN BEFORE */
 .thumbnail-row{
-  grid-template-columns:repeat(4, 1fr);
+  display:grid; /* ⭐ YOU WERE MISSING THIS */
+  grid-template-columns:repeat(4, 80px);
   gap:10px;
-  max-width:380px;
+  margin-top:12px;
 }
 
+/* 👇 LOCK thumbnail size */
 .thumb{
+  width:80px;
+  height:80px;
+  object-fit:cover;
   border-radius:10px;
+  cursor:pointer;
+  opacity:0.6;
+  transition:0.2s;
 }
 
 .thumb:hover{
   opacity:1;
 }
 
-/* 👇 selected thumbnail */
 .thumb.active{
   opacity:1;
   outline:2px solid var(--sage);
@@ -147,7 +157,7 @@ h1,h2,h3{
 
 .product-info{
   text-align:left;
-  max-width:420px;
+  width:360px; /* 👈 match image width */
 }
 
 .product-info h1{
@@ -426,10 +436,10 @@ font-size:14px;
 .social-grid{
   display:flex;
   justify-content:center;
-  gap:140px;
+  gap:125px;
   margin-top:30px;
 }
 
 .social-grid img{
-  width:52px;
+  width:50px;
 }
