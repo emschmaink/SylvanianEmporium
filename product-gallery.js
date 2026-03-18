@@ -1,4 +1,3 @@
-}
 function changeImage(element) {
   // change main image
   document.getElementById("mainImage").src = element.src;
