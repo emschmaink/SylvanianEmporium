@@ -17,3 +17,10 @@ window.onload = function () {
     changeImage(firstThumb);
   }
 };
+
+document.getElementById("productForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const formData = new FormData(this);
+  console.log(Object.fromEntries(formData.entries()));
+});
