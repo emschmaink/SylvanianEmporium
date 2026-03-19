@@ -6,10 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sylvanian Emporium</title>
 
-<!-- ✅ FIXED CSS PATH -->
 <link rel="stylesheet" href="/style.css">
 
-<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -19,7 +17,7 @@
 <body>
 
 <div class="page">
-  
+
 <!-- HEADER -->
 <header class="top-header">
 
@@ -40,7 +38,7 @@
   </div>
 
 </header>
-    
+
 <!-- Cart Dropdown -->
 <div id="cart-panel" class="hidden">
   <h3>Your Cart</h3>
@@ -55,15 +53,6 @@
   </div>
 </div>
 
-<script>
-    const cartBtn = document.getElementById("cart-btn");
-    const cartPanel = document.getElementById("cart-panel");
-
-    cartBtn.addEventListener("click", () => {
-      cartPanel.classList.toggle("hidden");
-    });
-  </script>
-  
 <!-- NAV -->
 <nav class="main-nav">
   <a href="/index.html">HOME</a>
@@ -80,12 +69,12 @@
   </a>
 </section>
 
-<!-- PRODUCT -->    
+<!-- PRODUCT -->
 <section class="product-page">
 
   <div class="product-layout">
 
-    <!-- LEFT: GALLERY -->
+    <!-- LEFT -->
     <div class="product-gallery">
 
       <img id="mainImage" src="../images/fc1.png" class="main-product-image">
@@ -99,9 +88,9 @@
         <img src="../images/fc6.png" class="thumb" onclick="changeImage(this)">
       </div>
 
-    </div> <!-- 👈 THIS WAS MISSING -->
+    </div>
 
-    <!-- RIGHT: INFO -->
+    <!-- RIGHT -->
     <div class="product-info">
 
       <h1>Forest Creatures Journal</h1>
@@ -110,48 +99,50 @@
 
       <form id="productForm">
 
-       <input type="hidden" name="product" value="Forest Creatures Journal">
-       <input type="hidden" name="price" value="28.00">
-        
+        <input type="hidden" name="product" value="Forest Creatures Journal">
+        <input type="hidden" name="price" value="28.00">
+
         <div class="color-options">
 
-         <label class="color-option">
-          <input type="radio" name="color" value="Bunny" checked>
-          <img src="../images/fcp1.png">
-         </label>
+          <label class="color-option">
+            <input type="radio" name="color" value="Bunny" checked>
+            <img src="../images/fcp1.png">
+          </label>
 
-         <label class="color-option">
-          <input type="radio" name="color" value="Raccoon">
-          <img src="../images/fcp2.png">
-         </label>
+          <label class="color-option">
+            <input type="radio" name="color" value="Raccoon">
+            <img src="../images/fcp2.png">
+          </label>
 
-         <label class="color-option">
-          <input type="radio" name="color" value="Mouse">
-          <img src="../images/fcp3.png">
-         </label>
+          <label class="color-option">
+            <input type="radio" name="color" value="Mouse">
+            <img src="../images/fcp3.png">
+          </label>
 
-         <label class="color-option">
-          <input type="radio" name="color" value="Deer">
-          <img src="../images/fcp4.png">
-         </label>
+          <label class="color-option">
+            <input type="radio" name="color" value="Deer">
+            <img src="../images/fcp4.png">
+          </label>
 
         </div>
-        
+
         <h3>$28.00</h3>
 
-     </form>
-      
-      <button type="button" class="cart-btn" id="add-to-cart"
-       data-name="Forest Creatures Journal"
-       data-price="28.00"
-       data-image="/images/fc1.png">
-       Add to Cart
+      </form>
+
+      <button type="button"
+        class="cart-btn"
+        id="add-to-cart"
+        data-name="Forest Creatures Journal"
+        data-price="28.00"
+        data-image="/images/fc1.png">
+        Add to Cart
       </button>
-      
+
       <button class="favorites-btn">Add to Favorites ♡</button>
 
       <p class="product-description">
-        Take notes in a whimsical way with our Forest Creatures journal. Packed with beautiful designs and simple lined pages, the freedom is yours to capture what makes your heart flutter!
+        Take notes in a whimsical way with our Forest Creatures journal...
       </p>
 
       <ul class="product-details">
@@ -168,49 +159,109 @@
 </section>
 
 <script src="../product-gallery.js"></script>
-  
+
+<!-- ========================= -->
+<!-- FIXED CART SYSTEM -->
+<!-- ========================= -->
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
   const cartBtn = document.getElementById("cart-btn");
   const cartPanel = document.getElementById("cart-panel");
-
-  cartBtn.addEventListener("click", () => {
-    cartPanel.classList.toggle("hidden");
-  });
-
   const addToCartBtn = document.getElementById("add-to-cart");
 
-  addToCartBtn.addEventListener("click", function () {
+  // Toggle cart
+  if (cartBtn && cartPanel) {
+    cartBtn.addEventListener("click", () => {
+      cartPanel.classList.toggle("hidden");
+      renderCart();
+    });
+  }
 
-    const name = this.dataset.name;
-    const price = parseFloat(this.dataset.price);
-    const image = this.dataset.image;
+  // Add to cart
+  if (addToCartBtn) {
+    addToCartBtn.addEventListener("click", function () {
 
-    const selectedColor = document.querySelector('input[name="color"]:checked')?.value;
+      const name = this.dataset.name;
+      const price = parseFloat(this.dataset.price);
+      const image = this.dataset.image;
 
-    const item = {
-      name,
-      price,
-      image,
-      color: selectedColor
-    };
+      const selectedColor =
+        document.querySelector('input[name="color"]:checked')?.value;
+
+      const newItem = {
+        name,
+        price,
+        image,
+        color: selectedColor,
+        qty: 1
+      };
+
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+      const existing = cart.find(
+        i => i.name === newItem.name && i.color === newItem.color
+      );
+
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push(newItem);
+      }
+
+      localStorage.setItem("cart", JSON.stringify(cart));
+
+      renderCart();
+      cartPanel.classList.remove("hidden");
+
+      console.log("Added to cart:", newItem);
+    });
+  }
+
+  // Render cart
+  function renderCart() {
+    const cartItems = document.getElementById("cart-items");
+    const cartTotal = document.getElementById("cart-total");
+
+    if (!cartItems || !cartTotal) return;
 
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    cart.push(item);
-    localStorage.setItem("cart", JSON.stringify(cart));
 
-    document.getElementById("cart-panel").classList.remove("hidden");
+    cartItems.innerHTML = "";
 
-    console.log("Added to cart:", item);
-  });
+    let total = 0;
+
+    cart.forEach(item => {
+      total += item.price * item.qty;
+
+      cartItems.innerHTML += `
+        <div class="cart-item">
+          <img src="${item.image}" class="cart-img">
+
+          <div class="cart-info">
+            <p class="cart-name">
+              ${item.name} (${item.color || ""}) x${item.qty}
+            </p>
+            <p class="cart-price">
+              $${(item.price * item.qty).toFixed(2)}
+            </p>
+          </div>
+        </div>
+        <hr>
+      `;
+    });
+
+    if (cart.length === 0) {
+      cartItems.innerHTML = `<p class="empty">Your cart is empty</p>`;
+    }
+
+    cartTotal.textContent = "$" + total.toFixed(2);
+  }
+
+  renderCart();
 
 });
 </script>
-  
-</body>
-</html>
-
 
 <!-- FOOTER LINKS -->
 <section class="footer-links">
@@ -238,28 +289,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </section>
 
-
-
-<!-- SOCIAL -->
 <footer class="social-footer">
   <h2>Follow Us on Our Socials</h2>
 
   <div class="social-grid">
-    <a href="https://www.instagram.com/sylvanian.emporium" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+    <a href="https://www.instagram.com/sylvanian.emporium" target="_blank" rel="noopener noreferrer">
       <img src="/assets/instagram.png" alt="Instagram">
     </a>
 
-    <a href="/nav/contact.html" aria-label="Contact">
+    <a href="/nav/contact.html">
       <img src="/assets/email.png" alt="Email">
     </a>
 
-    <a href="https://www.pinterest.com/sylvanianemporium/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest">
+    <a href="https://www.pinterest.com/sylvanianemporium/" target="_blank" rel="noopener noreferrer">
       <img src="/assets/pinterest.png" alt="Pinterest">
     </a>
   </div>
-  
+
 </footer>
-  
-</div>
+
+</div> <!-- closes .page -->
+
 </body>
 </html>
