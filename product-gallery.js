@@ -1,38 +1,54 @@
-function changeImage(element) {
-  // change main image
-  document.getElementById("mainImage").src = element.src;
+// =========================
+// GALLERY
+// =========================
 
-  // remove active from all
+function changeImage(element) {
+  const mainImage = document.getElementById("mainImage");
+  if (!mainImage) return;
+
+  mainImage.src = element.src;
+
   document.querySelectorAll(".thumb").forEach(img => {
     img.classList.remove("active");
   });
 
-  // add active to clicked
   element.classList.add("active");
 }
 
-window.onload = function () {
+window.addEventListener("DOMContentLoaded", () => {
   const firstThumb = document.querySelector(".thumb");
   if (firstThumb) {
     changeImage(firstThumb);
   }
-};
-
-document.getElementById("productForm").addEventListener("submit", function(e){
-  e.preventDefault();
-
-  const formData = new FormData(this);
-  console.log(Object.fromEntries(formData.entries()));
 });
 
-<script>
+
+// =========================
+// PRODUCT FORM
+// =========================
+
+const productForm = document.getElementById("productForm");
+
+if (productForm) {
+  productForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(this);
+    console.log(Object.fromEntries(formData.entries()));
+  });
+}
+
+
+// =========================
+// CART SYSTEM
+// =========================
+
 let cart = [];
 
 const buttons = document.querySelectorAll(".add-to-cart");
 
 buttons.forEach(button => {
   button.addEventListener("click", () => {
-    
     const item = {
       name: button.dataset.name,
       price: parseFloat(button.dataset.price),
@@ -43,11 +59,8 @@ buttons.forEach(button => {
     addToCart(item);
   });
 });
-</script>
 
-<script>
 function addToCart(item) {
-  // check if item already exists
   const existing = cart.find(i => i.name === item.name);
 
   if (existing) {
@@ -58,13 +71,18 @@ function addToCart(item) {
 
   updateCartUI();
 }
-</script>
 
-<script>
+
+// =========================
+// CART UI UPDATE
+// =========================
+
 function updateCartUI() {
   const cartItems = document.getElementById("cart-items");
   const cartCount = document.getElementById("cart-count");
   const cartTotal = document.getElementById("cart-total");
+
+  if (!cartItems || !cartCount || !cartTotal) return;
 
   cartItems.innerHTML = "";
 
@@ -77,7 +95,7 @@ function updateCartUI() {
 
     cartItems.innerHTML += `
       <div class="cart-item">
-        <img src="${item.image}" class="cart-img">
+        <img src="${item.image}" class="cart-img" alt="${item.name}">
 
         <div class="cart-info">
           <p class="cart-name">${item.name} - x${item.qty}</p>
@@ -95,13 +113,19 @@ function updateCartUI() {
   cartCount.textContent = count;
   cartTotal.textContent = total.toFixed(2);
 }
-</script>
 
-<script>
-    const cartBtn = document.getElementById("cart-btn");
-    const cartPanel = document.getElementById("cart-panel");
 
+// =========================
+// CART PANEL TOGGLE
+// =========================
+
+window.addEventListener("DOMContentLoaded", () => {
+  const cartBtn = document.getElementById("cart-btn");
+  const cartPanel = document.getElementById("cart-panel");
+
+  if (cartBtn && cartPanel) {
     cartBtn.addEventListener("click", () => {
       cartPanel.classList.toggle("hidden");
     });
-</script>
+  }
+});
