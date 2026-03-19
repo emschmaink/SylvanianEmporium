@@ -459,3 +459,141 @@ font-size:14px;
 .social-grid img{
   width:50px;
 }
+
+  <-- MOBILE FIXES -->
+
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .top-header {
+    padding: 16px 18px;
+    gap: 10px;
+  }
+
+  .header-left,
+  .header-right {
+    gap: 10px;
+    align-items: center;
+  }
+
+  .top-header img {
+    width: 22px;
+  }
+
+  .logo img {
+    width: 260px;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .main-nav {
+    padding: 12px 10px;
+  }
+
+  .main-nav a {
+    display: inline-block;
+    margin: 6px 10px;
+    font-size: 16px;
+  }
+
+  .page {
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0 16px 40px;
+    min-height: 100vh;
+
+    /* remove plaid on mobile */
+    background: var(--cream);
+  }
+
+  .impact-banner {
+    margin: 24px 0;
+  }
+
+  .impact-banner img,
+  .sale-card img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .hero {
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .hero-text {
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 24px;
+    padding: 0 6px;
+  }
+
+  .shop-btn {
+    margin-top: 20px;
+    padding: 14px 28px;
+    font-size: 16px;
+  }
+
+  .collections {
+    margin-top: 50px;
+  }
+
+  .collection-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    margin-top: 28px;
+  }
+
+  .collection-card {
+    width: 100%;
+    max-width: 340px;
+    margin: 0 auto;
+  }
+
+  .collection-card img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .collection-card p {
+    font-size: 20px;
+    margin-top: 10px;
+  }
+
+  .contact-form {
+    max-width: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 2rem auto;
+  }
+
+  .footer-links {
+    margin-top: 60px;
+  }
+
+  .footer-grid,
+  .social-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+  }
+
+  .social-footer {
+    margin-top: 50px;
+    padding-bottom: 40px;
+  }
+
+  .social-grid img {
+    width: 42px;
+  }
+}
