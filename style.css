@@ -287,8 +287,8 @@ margin-bottom:20px;
 
 .collection-grid {
   display: grid;
-  grid-template-columns: repeat(2, 220px); /* fixed card width */
-  gap: 16px;
+  grid-template-columns: repeat(2, 180px); /* fixed card width */
+  gap: 12px;
   justify-content: center; /* centers the whole grid */
 }
   
