@@ -45,6 +45,56 @@ h1,h2,h3{
   width:600px;
 }
 
+/* Cart button */
+#cart-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Cart panel */
+#cart-panel {
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  width: 320px;
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  padding: 16px;
+  z-index: 1000;
+}
+
+/* Hidden state */
+.hidden {
+  display: none;
+}
+
+/* Items area */
+#cart-items {
+  max-height: 200px;
+  overflow-y: auto;
+  margin: 10px 0;
+}
+
+/* Footer */
+.cart-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Checkout button */
+#checkout-btn {
+  background: var(--sage);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
 
 /* NAV */
 
