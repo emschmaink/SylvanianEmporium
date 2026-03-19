@@ -109,7 +109,7 @@ h1,h2,h3{
   display:grid;
   grid-template-columns: 360px 360px; /* 👈 equal columns */
   justify-content:center;
-  gap:60px;
+  gap:30px;
   max-width:900px;
   margin:60px auto;
   align-items:start;
