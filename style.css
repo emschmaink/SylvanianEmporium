@@ -27,7 +27,7 @@ h1,h2,h3{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:20px 60px;
+  padding:20px 40px;
   background:var(--cream);
 }
 
@@ -35,6 +35,11 @@ h1,h2,h3{
 .header-right{
   display:flex;
   gap:18px;
+}
+
+.header-left img,
+.header-right img {
+  width: 34px;  /* try 34–36px */
 }
 
 .top-header img{
