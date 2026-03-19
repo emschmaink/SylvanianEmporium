@@ -81,14 +81,6 @@
 </section>
 
 <!-- PRODUCT -->    
-
-<title>Forest Journal | Sylvanian Emporium</title>
-
-<link rel="stylesheet" href="../style.css">
-</head>
-
-<body>
-
 <section class="product-page">
 
   <div class="product-layout">
@@ -149,12 +141,12 @@
 
      </form>
       
-      <button class="cart-btn"
-        data-name="Forest Creatures Journal"
-        data-price="28.00"
-        data-image="/images/fc1.png">
-        Add to Cart
-       </button>
+      <button type="button" class="cart-btn" id="add-to-cart"
+       data-name="Forest Creatures Journal"
+       data-price="28.00"
+       data-image="/images/fc1.png">
+       Add to Cart
+      </button>
       
       <button class="favorites-btn">Add to Favorites ♡</button>
 
@@ -176,7 +168,32 @@
 </section>
 
 <script src="../product-gallery.js"></script>
+  
+<script>
+document.getElementById("add-to-cart").addEventListener("click", function () {
+  const name = this.dataset.name;
+  const price = parseFloat(this.dataset.price);
+  const image = this.dataset.image;
 
+  const selectedColor = document.querySelector('input[name="color"]:checked')?.value;
+
+  const item = {
+    name,
+    price,
+    image,
+    color: selectedColor
+  };
+
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.push(item);
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+  document.getElementById("cart-panel").classList.remove("hidden");
+
+  console.log("Added to cart:", item);
+});
+</script>
+  
 </body>
 </html>
 
