@@ -155,6 +155,36 @@ h1,h2,h3{
   outline:2px solid var(--sage);
 }
 
+.color-option input{
+  display:none;
+}
+
+.color-option img{
+  width:42px;        /* 👈 smaller */
+  height:42px;
+  object-fit:cover;
+  border-radius:50%;
+  border:2px solid transparent;
+  cursor:pointer;
+  transition:0.2s;
+}
+/* hover effect */
+.color-option img:hover{
+  transform:scale(1.08);
+}
+
+/* SELECTED STATE */
+.color-option input:checked + img{
+  border:2px solid var(--sage);
+  transform:scale(1.05);
+}
+
+.color-options{
+  display:flex;
+  gap:12px;
+  margin:10px 0 20px;
+}
+
 .product-info{
   text-align:left;
   width:360px; /* 👈 match image width */
@@ -177,20 +207,6 @@ h1,h2,h3{
 .price{
   font-size:24px;
   margin-bottom:18px;
-}
-
-.color-options{
-display:flex;
-gap:10px;
-margin:10px 0 20px;
-}
-
-.color-circle{
-width:28px;
-height:28px;
-border-radius:50%;
-background:#b48d65;
-cursor:pointer;
 }
 
 .product-details{
