@@ -56,7 +56,18 @@
     <button id="checkout-btn">Checkout</button>
   </div>
 </div>
-    
+
+<script>
+    const cartBtn = document.getElementById("cart-btn");
+    const cartPanel = document.getElementById("cart-panel");
+
+    cartBtn.addEventListener("click", () => {
+      cartPanel.classList.toggle("hidden");
+    });
+  </script>
+</body>
+</html>
+
 <!-- NAV -->
 <nav class="main-nav">
   <a href="/index.html">HOME</a>
