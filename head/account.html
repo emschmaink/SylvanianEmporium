@@ -8,6 +8,7 @@
 
 <!-- ✅ FIXED CSS PATH -->
 <link rel="stylesheet" href="/style.css">
+<script src="/cart.js" defer></script>
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,8 +25,9 @@
 <header class="top-header">
 
   <div class="header-left">
-    <img src="/assets/account.png" alt="Account">
-    <img src="/assets/favorites.png" alt="Favorites">
+    <button id="account-btn" class="account-button">
+     <img src="/assets/account.png" alt="Account">
+    </button>
   </div>
 
   <div class="logo">
@@ -33,11 +35,35 @@
   </div>
 
   <div class="header-right">
-    <img src="/assets/search.png" alt="Search">
-    <img src="/assets/cart.png" alt="Cart">
+    <button id="cart-btn" class="cart-button">
+     <img src="/assets/cart.png" alt="Cart">
+    </button>
   </div>
 
 </header>
+    
+<!-- Cart Dropdown -->
+<div id="cart-panel" class="hidden">
+  <h3>Your Cart</h3>
+
+  <div id="cart-items">
+    <p class="empty">Your cart is empty</p>
+  </div>
+
+  <div class="cart-footer">
+    <span id="cart-total">$0.00</span>
+    <button id="checkout-btn">Checkout</button>
+  </div>
+</div>
+
+<script>
+    const cartBtn = document.getElementById("cart-btn");
+    const cartPanel = document.getElementById("cart-panel");
+
+    cartBtn.addEventListener("click", () => {
+      cartPanel.classList.toggle("hidden");
+    });
+  </script>
 
     
 <!-- NAV -->
