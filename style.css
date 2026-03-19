@@ -45,6 +45,14 @@ h1,h2,h3{
   width:600px;
 }
 
+/* Account button */
+#account-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
 /* Cart button */
 #cart-btn {
   background: none;
