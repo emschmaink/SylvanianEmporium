@@ -170,27 +170,41 @@
 <script src="../product-gallery.js"></script>
   
 <script>
-document.getElementById("add-to-cart").addEventListener("click", function () {
-  const name = this.dataset.name;
-  const price = parseFloat(this.dataset.price);
-  const image = this.dataset.image;
+document.addEventListener("DOMContentLoaded", function () {
 
-  const selectedColor = document.querySelector('input[name="color"]:checked')?.value;
+  const cartBtn = document.getElementById("cart-btn");
+  const cartPanel = document.getElementById("cart-panel");
 
-  const item = {
-    name,
-    price,
-    image,
-    color: selectedColor
-  };
+  cartBtn.addEventListener("click", () => {
+    cartPanel.classList.toggle("hidden");
+  });
 
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  cart.push(item);
-  localStorage.setItem("cart", JSON.stringify(cart));
+  const addToCartBtn = document.getElementById("add-to-cart");
 
-  document.getElementById("cart-panel").classList.remove("hidden");
+  addToCartBtn.addEventListener("click", function () {
 
-  console.log("Added to cart:", item);
+    const name = this.dataset.name;
+    const price = parseFloat(this.dataset.price);
+    const image = this.dataset.image;
+
+    const selectedColor = document.querySelector('input[name="color"]:checked')?.value;
+
+    const item = {
+      name,
+      price,
+      image,
+      color: selectedColor
+    };
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.push(item);
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    document.getElementById("cart-panel").classList.remove("hidden");
+
+    console.log("Added to cart:", item);
+  });
+
 });
 </script>
   
