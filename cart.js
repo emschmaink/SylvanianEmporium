@@ -6,9 +6,13 @@ function saveCart(cart) {
   localStorage.setItem("cart", JSON.stringify(cart));
 }
 
-// ADD ITEM
 window.addToCart = function(item) {
   let cart = getCart();
+
+  const cartPanel = document.getElementById("cart-panel");
+  if (cartPanel) {
+    cartPanel.classList.remove("hidden");
+  }
 
   const existing = cart.find(
     i => i.name === item.name && i.color === item.color
@@ -22,8 +26,6 @@ window.addToCart = function(item) {
 
   saveCart(cart);
   renderCart();
-  
-  alert("Added to cart ✨");
 }
 
 // CHANGE QUANTITY
