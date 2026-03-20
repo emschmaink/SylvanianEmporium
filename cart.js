@@ -116,3 +116,16 @@ function renderCart() {
 document.addEventListener("DOMContentLoaded", () => {
   renderCart();
 });
+
+// TOGGLE CART PANEL (GLOBAL)
+document.addEventListener("DOMContentLoaded", () => {
+  const cartBtn = document.getElementById("cart-btn");
+  const cartPanel = document.getElementById("cart-panel");
+
+  if (cartBtn && cartPanel) {
+    cartBtn.addEventListener("click", () => {
+      cartPanel.classList.toggle("hidden");
+      renderCart();
+    });
+  }
+});
