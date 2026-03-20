@@ -22,8 +22,9 @@ window.addToCart = function(item) {
 
   saveCart(cart);
   renderCart();
-}
+  
   alert("Added to cart ✨");
+}
 
 // CHANGE QUANTITY
 window.changeQty = function(index, delta) {
