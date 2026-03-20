@@ -7,7 +7,7 @@ function saveCart(cart) {
 }
 
 // ADD ITEM
-function addToCart(item) {
+window.addToCart = function(item) {
   let cart = getCart();
 
   const existing = cart.find(
@@ -23,9 +23,10 @@ function addToCart(item) {
   saveCart(cart);
   renderCart();
 }
+  alert("Added to cart ✨");
 
 // CHANGE QUANTITY
-function changeQty(index, delta) {
+window.changeQty = function(index, delta) {
   let cart = getCart();
 
   cart[index].qty += delta;
@@ -39,7 +40,7 @@ function changeQty(index, delta) {
 }
 
 // REMOVE ITEM
-function removeItem(index) {
+window.removeItem = function(index) {
   let cart = getCart();
   cart.splice(index, 1);
   saveCart(cart);
