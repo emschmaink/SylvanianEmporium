@@ -262,21 +262,21 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
-document.getElementById("add-to-cart").addEventListener("click", function () {
+  <script>
+function changeImage(element) {
+  const mainImage = document.getElementById("mainImage");
 
-  const name = this.dataset.name;
-  const price = parseFloat(this.dataset.price);
-  const image = this.dataset.image;
+  // Change main image
+  mainImage.src = element.src;
 
-  addToCart({
-    name: name,
-    price: price,
-    image: image,
-    color: selectedColor || "",
-    qty: 1
+  // Update active thumbnail
+  document.querySelectorAll(".thumb").forEach(img => {
+    img.classList.remove("active");
   });
 
-});
+  element.classList.add("active");
+}
+</script>
 
 <!-- FOOTER LINKS -->
 <section class="footer-links">
