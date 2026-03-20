@@ -26,6 +26,15 @@ window.addToCart = function(item) {
 
   saveCart(cart);
   renderCart();
+
+  const popup = document.getElementById("cart-popup");
+
+if (popup) {
+  popup.classList.add("show");
+
+  setTimeout(() => {
+    popup.classList.remove("show");
+  }, 2000);
 }
 
 // CHANGE QUANTITY
