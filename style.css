@@ -165,6 +165,35 @@ h1,h2,h3{
   background: #747a57;
 }
 
+/* POPUP */
+
+.cart-popup {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+
+  background: #f4efe6; /* cream */
+  color: #6a563f; /* ink */
+
+  padding: 12px 18px;
+  border-radius: 999px;
+
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+
+  font-size: 14px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+
+  z-index: 2000;
+}
+
+/* SHOW STATE */
+.cart-popup.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* NAV */
 
 .main-nav{
