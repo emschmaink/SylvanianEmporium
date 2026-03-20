@@ -158,106 +158,35 @@
   </div>
 
 </section>
-
-<!-- ========================= -->
-<!-- FIXED CART SYSTEM -->
-<!-- ========================= -->
-<script>
+  
+  <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-  const cartBtn = document.getElementById("cart-btn");
-  const cartPanel = document.getElementById("cart-panel");
-  const addToCartBtn = document.getElementById("add-to-cart");
+  const btn = document.getElementById("add-to-cart");
 
-  // Toggle cart
-  if (cartBtn && cartPanel) {
-    cartBtn.addEventListener("click", () => {
-      cartPanel.classList.toggle("hidden");
-      renderCart();
-    });
-  }
+  if (!btn) return;
 
-  // Add to cart
-  if (addToCartBtn) {
-    addToCartBtn.addEventListener("click", function () {
+  btn.addEventListener("click", function () {
 
-      const name = this.dataset.name;
-      const price = parseFloat(this.dataset.price);
-      const image = this.dataset.image;
+    const name = this.dataset.name;
+    const price = parseFloat(this.dataset.price);
 
-      const selectedColor =
-        document.querySelector('input[name="color"]:checked')?.value;
+    const activeThumb = document.querySelector(".thumb.active");
+    const image = activeThumb ? activeThumb.src : this.dataset.image;
 
-      const newItem = {
-        name,
-        price,
-        image,
-        color: selectedColor,
-        qty: 1
-      };
+    const selectedColor =
+      document.querySelector('input[name="color"]:checked')?.value;
 
-      let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-      const existing = cart.find(
-        i => i.name === newItem.name && i.color === newItem.color
-      );
-
-      if (existing) {
-        existing.qty += 1;
-      } else {
-        cart.push(newItem);
-      }
-
-      localStorage.setItem("cart", JSON.stringify(cart));
-
-      renderCart();
-      cartPanel.classList.remove("hidden");
-
-      console.log("Added to cart:", newItem);
-    });
-  }
-
-  // Render cart
-  function renderCart() {
-    const cartItems = document.getElementById("cart-items");
-    const cartTotal = document.getElementById("cart-total");
-
-    if (!cartItems || !cartTotal) return;
-
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-    cartItems.innerHTML = "";
-
-    let total = 0;
-
-    cart.forEach(item => {
-      total += item.price * item.qty;
-
-      cartItems.innerHTML += `
-        <div class="cart-item">
-          <img src="${item.image}" class="cart-img">
-
-          <div class="cart-info">
-            <p class="cart-name">
-              ${item.name} (${item.color || ""}) x${item.qty}
-            </p>
-            <p class="cart-price">
-              $${(item.price * item.qty).toFixed(2)}
-            </p>
-          </div>
-        </div>
-        <hr>
-      `;
+    // 👇 THIS is the key — uses your global cart.js
+    addToCart({
+      name: name,
+      price: price,
+      image: image,
+      color: selectedColor || "",
+      qty: 1
     });
 
-    if (cart.length === 0) {
-      cartItems.innerHTML = `<p class="empty">Your cart is empty</p>`;
-    }
-
-    cartTotal.textContent = "$" + total.toFixed(2);
-  }
-
-  renderCart();
+  });
 
 });
 </script>
