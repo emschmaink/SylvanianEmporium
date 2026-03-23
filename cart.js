@@ -36,6 +36,15 @@ if (popup) {
     popup.classList.remove("show");
   }, 2000);
 }
+if (popup) {
+  popup.classList.add("show");
+
+  setTimeout(() => {
+    popup.classList.remove("show");
+  }, 2000);
+}
+
+};
 
 // CHANGE QUANTITY
 window.changeQty = function(index, delta) {
