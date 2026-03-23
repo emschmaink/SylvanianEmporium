@@ -135,7 +135,7 @@ const PRODUCTS = {
 
   botanical: {
     name: "Botanical Weekly Planner",
-    price: 32.00,
+    price: 30.00,
     images: [
       "/images/bp1.png",
       "/images/bp2.png",
@@ -149,5 +149,26 @@ const PRODUCTS = {
       { name: "Beige", image: "/images/bpp2.png" },
     ],
     description: "Stay organized and stylish with the Botanical Planner! With two color options, monthly calenders, book trackers, habit pages, weekly trackers, and meal plans, this 176 page planner is the perfect pocket-sized companion to bring on the go!"
+  }
+};
+
+ academia: {
+    name: "Academia Weekly Planner",
+    price: 30.00,
+    images: [
+      "/images/ap1.png",
+      "/images/ap2.png",
+      "/images/ap3.png",
+      "/images/ap4.png",
+      "/images/ap5.png",
+      "/images/ap6.png"
+    ],
+    colors: [
+      { name: "Brown", image: "/images/app1.png" },
+      { name: "Pink", image: "/images/app2.png" },
+      { name: "Green", image: "/images/app3.png" },
+      { name: "Blue", image: "/images/app4.png" },
+    ],
+    description: "Stay organized and stylish with the Academia Planner! With two color options, monthly calenders, book trackers, habit pages, weekly trackers, and meal plans, this 176 page planner is the perfect pocket-sized companion to bring on the go!"
   }
 };
