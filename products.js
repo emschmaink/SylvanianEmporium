@@ -25,7 +25,7 @@ const PRODUCTS = {
       { name: "Mouse", image: "/images/fcp3.png" },
       { name: "Deer", image: "/images/fcp4.png" }
     ],
-    description: "Take notes in a whimsical way with our unique journals. With beautiful inner designs, a thoughtful exterior design, and 200 lined pages, this notebook is sure to be a beloved companion to whatever make your heart flutter! Size: 6inx9in.          Pages: 200 lined          Cover: Hardcover
+    description: "Take notes in a whimsical way with our unique journals. With beautiful inner designs, a thoughtful exterior design, and 200 lined pages, this notebook is sure to be a beloved companion to whatever make your heart flutter! Size: 6inx9in.          Pages: 200 lined          Cover: Hardcover"
   },
 
   roses: {
