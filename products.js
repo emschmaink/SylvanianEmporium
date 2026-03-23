@@ -1,3 +1,15 @@
+window.changeImage = function(element) {
+  const mainImage = document.getElementById("mainImage");
+
+  mainImage.src = element.src;
+
+  document.querySelectorAll(".thumb").forEach(img => {
+    img.classList.remove("active");
+  });
+
+  element.classList.add("active");
+};
+
 const PRODUCTS = {
   forest: {
     name: "Forest Creatures Journal",
