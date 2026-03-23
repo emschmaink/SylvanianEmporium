@@ -8,7 +8,8 @@
 
 <link rel="stylesheet" href="/style.css">
 <script src="/cart.js" defer></script>
-
+<script src="/gallery.js" defer></script>
+  
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -162,22 +163,6 @@
   <div id="cart-popup" class="cart-popup">
    ✨ Added to cart ✨
   </div>
-
-  <script>
-function changeImage(element) {
-  const mainImage = document.getElementById("mainImage");
-
-  // Change main image
-  mainImage.src = element.src;
-
-  // Update active thumbnail
-  document.querySelectorAll(".thumb").forEach(img => {
-    img.classList.remove("active");
-  });
-
-  element.classList.add("active");
-}
-</script>
 
 <!-- FOOTER LINKS -->
 <section class="footer-links">
