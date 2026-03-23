@@ -1,3 +1,28 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.getElementById("add-to-cart");
+
+  if (!btn) return;
+
+  btn.addEventListener("click", function () {
+    const name = this.dataset.name;
+    const price = parseFloat(this.dataset.price);
+
+    const activeThumb = document.querySelector(".thumb.active");
+    const image = activeThumb ? activeThumb.src : this.dataset.image;
+
+    const selectedColor =
+      document.querySelector('input[name="color"]:checked')?.value;
+
+    addToCart({
+      name,
+      price,
+      image,
+      color: selectedColor || "",
+      qty: 1
+    });
+  });
+});
+
 function getCart() {
   return JSON.parse(localStorage.getItem("cart")) || [];
 }
