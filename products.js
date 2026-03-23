@@ -25,7 +25,7 @@ const PRODUCTS = {
       { name: "Mouse", image: "/images/fcp3.png" },
       { name: "Deer", image: "/images/fcp4.png" }
     ],
-    description: "Take notes in a whimsical way with our unique journals. With beautiful inner designs, a thoughtful exterior design, and 200 lined pages, this notebook is sure to be a beloved companion to whatever make your heart flutter! Size: 6inx9in.          Pages: 200 lined          Cover: Hardcover"
+    description: "Take notes in a whimsical way with our unique journals. With beautiful inner designs, a thoughtful exterior design, and 200 lined pages, this notebook is sure to be a beloved companion to whatever makes your heart flutter! Available in a 6inx9in. compact size with a beautiful hardcover."
   },
 
   roses: {
@@ -41,7 +41,7 @@ const PRODUCTS = {
       { name: "Brown", image: "/images/vrp3.png" },
       { name: "Beige", image: "/images/vrp4.png" }
     ],
-    description: "Take notes in a whimsical way with our Vintage Roses journal..."
+    description: "Take notes in a whimsical way with our unique journals. With beautiful inner designs, a thoughtful exterior design, and 200 lined pages, this notebook is sure to be a beloved companion to whatever makes your heart flutter! Available in a 6inx9in. compact size with a beautiful hardcover."
   },
 
   birthflower: {
@@ -65,7 +65,7 @@ const PRODUCTS = {
       { name: "November", image: "/images/bfp11.png" },
       { name: "December", image: "/images/bfp12.png" }
     ],
-    description: "Take notes in a whimsical and personal way with our Birth Flower journal..."
+    description: "Take notes in a whimsical way with our unique journals. With beautiful inner designs, a thoughtful exterior design, and 200 lined pages, this notebook is sure to be a beloved companion to whatever makes your heart flutter! Available in a 6inx9in. compact size with a beautiful hardcover."
   },
 
   wildflowers: {
@@ -81,7 +81,7 @@ const PRODUCTS = {
       { name: "Green", image: "/images/wfp3.png" },
       { name: "Pink", image: "/images/wfp4.png" }
     ],
-    description: "Take notes in a whimsical way with our Bold Wildflowers journal..."
+    description: "Take notes in a whimsical way with our unique journals. With beautiful inner designs, a thoughtful exterior design, and 200 lined pages, this notebook is sure to be a beloved companion to whatever makes your heart flutter! Available in a 6inx9in. compact size with a beautiful hardcover."
   },
 
   bohemian: {
@@ -109,7 +109,7 @@ const PRODUCTS = {
       { name: "Light", image: "/images/cfp1.png" },
       { name: "Dark", image: "/images/cfp2.png" }
     ],
-    description: "Take notes in a whimsical way with our Coquette Floral journal..."
+    description: "Take notes in a whimsical way with our unique journals. With beautiful inner designs, a thoughtful exterior design, and 200 lined pages, this notebook is sure to be a beloved companion to whatever makes your heart flutter! Available in a 6inx9in. compact size with a beautiful hardcover."
   },
 
   botanical: {
@@ -123,7 +123,7 @@ const PRODUCTS = {
       { name: "Green", image: "/images/bpp1.png" },
       { name: "Beige", image: "/images/bpp2.png" }
     ],
-    description: "Stay organized and stylish with the Botanical Planner..."
+    description: "Stay organized and stylish with our weekly planner! Filled with 176 pages of adorable designs and fun trackers, this journal won't disappoint when put the test of functionality vs. aesthetic. Comes in a perfectly pocket sized 5inx7in design, with 176 pages and spiral binding."
   },
 
   academia: {
@@ -139,7 +139,7 @@ const PRODUCTS = {
       { name: "Green", image: "/images/app3.png" },
       { name: "Blue", image: "/images/app4.png" }
     ],
-    description: "Stay organized and stylish with the Academia Planner..."
+    description: "Stay organized and stylish with our weekly planner! Filled with 176 pages of adorable designs and fun trackers, this journal won't disappoint when put the test of functionality vs. aesthetic. Comes in a perfectly pocket sized 5inx7in design, with 176 pages and spiral binding."
   }
 
 };
