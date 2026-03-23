@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sylvanian Emporium</title>
+
+<link rel="stylesheet" href="/style.css">
+<script src="/cart.js" defer></script>
+<script src="/products.js" defer></script>
+<script src="/product-loader.js" defer></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Libre+Baskerville&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="page">
+
+<!-- HEADER -->
+<header class="top-header">
+
+  <div class="header-left">
+    <button id="account-btn" class="account-button">
+     <img src="/assets/account.png" alt="Account">
+    </button>
+  </div>
+
+  <div class="logo">
+    <img src="/assets/logo.png" alt="Sylvanian Emporium">
+  </div>
+
+  <div class="header-right">
+    <button id="cart-btn" class="cart-button">
+     <img src="/assets/cart.png" alt="Cart">
+    </button>
+  </div>
+
+</header>
+
+<!-- Cart Dropdown -->
+<div id="cart-panel" class="hidden">
+  <h3>Your Cart</h3>
+
+  <div id="cart-items">
+    <p class="empty">Your cart is empty</p>
+  </div>
+
+  <div class="cart-footer">
+    <span id="cart-total">$0.00</span>
+    <button id="checkout-btn">Checkout</button>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="main-nav">
+  <a href="/index.html">HOME</a>
+  <a href="/nav/shop.html">SHOP</a>
+  <a href="/nav/about.html">ABOUT</a>
+  <a href="/nav/contact.html">CONTACT</a>
+  <a href="/nav/policies.html">POLICIES</a>
+</nav>
+
+<!-- IMPACT BANNER -->
+<section class="impact-banner">
+  <a href="/nav/about.html">
+    <img src="/assets/impact.png" alt="Impact banner">
+  </a>
+</section>
+
+<!-- PRODUCT -->
+<section class="product-page">
+
+  <div class="product-layout">
+
+    <!-- LEFT -->
+    <div class="product-gallery">
+
+      <!-- ✅ dynamic -->
+      <img id="mainImage" class="main-product-image">
+
+      <!-- ✅ dynamic -->
+      <div class="thumbnail-row" id="thumbnail-row"></div>
+
+    </div>
+
+    <!-- RIGHT -->
+    <div class="product-info">
+
+      <!-- ✅ dynamic -->
+      <h1 id="product-name"></h1>
+
+      <h3>Color Options</h3>
+
+      <form id="productForm">
+
+        <!-- ✅ dynamic -->
+        <div class="color-options" id="color-options"></div>
+
+        <!-- ✅ dynamic -->
+        <h3 id="product-price"></h3>
+
+      </form>
+
+      <!-- ✅ simplified -->
+      <button type="button"
+        class="cart-btn"
+        id="add-to-cart">
+        Add to Cart
+      </button>
+
+      <button class="favorites-btn">Add to Favorites ♡</button>
+
+      <!-- ✅ dynamic -->
+      <p id="product-description" class="product-description"></p>
+
+      <!-- (kept static — since same for all products) -->
+      <ul class="product-details">
+        <li>Size: 6 x 9 inches</li>
+        <li>Pages: 200 lined</li>
+        <li>Interior: B&W</li>
+        <li>Cover: Hardcover</li>
+      </ul>
+
+    </div>
+
+  </div>
+
+</section>
+  
+<div id="cart-popup" class="cart-popup">
+ ✨ Added to cart ✨
+</div>
+
+<!-- FOOTER LINKS -->
+<section class="footer-links">
+
+  <h2>Thanks for wandering in! Come and stay awhile</h2>
+
+  <div class="footer-grid">
+
+    <div>
+      <a href="/index.html">HOME</a>
+      <a href="/nav/about.html">ABOUT</a>
+    </div>
+
+    <div>
+      <a href="/nav/shop.html">SHOP</a>
+      <a href="/head/account.html">ACCOUNT</a>
+    </div>
+
+    <div>
+      <a href="/nav/contact.html">CONTACT</a>
+      <a href="/nav/policies.html">POLICIES</a>
+    </div>
+
+  </div>
+
+</section>
+
+<footer class="social-footer">
+  <h2>Follow Us on Our Socials</h2>
+
+  <div class="social-grid">
+    <a href="https://www.instagram.com/sylvanian.emporium" target="_blank" rel="noopener noreferrer">
+      <img src="/assets/instagram.png" alt="Instagram">
+    </a>
+
+    <a href="/nav/contact.html">
+      <img src="/assets/email.png" alt="Email">
+    </a>
+
+    <a href="https://www.pinterest.com/sylvanianemporium/" target="_blank" rel="noopener noreferrer">
+      <img src="/assets/pinterest.png" alt="Pinterest">
+    </a>
+  </div>
+
+</footer>
+
+</div> <!-- closes .page -->
+
+</body>
+</html>
