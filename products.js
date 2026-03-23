@@ -21,7 +21,6 @@ const PRODUCTS = {
   }
 };
 
-const PRODUCTS = {
   roses: {
     name: "Vintage Roses Journal",
     price: 28.00,
@@ -44,7 +43,6 @@ const PRODUCTS = {
   }
 };
 
-const PRODUCTS = {
   birthflower: {
     name: "Birth Flower Journal",
     price: 28.00,
@@ -76,7 +74,6 @@ const PRODUCTS = {
   }
 };
 
-const PRODUCTS = {
   wildflowers: {
     name: "Bold Wildflowers Journal",
     price: 28.00,
@@ -98,7 +95,6 @@ const PRODUCTS = {
   }
 };
 
-const PRODUCTS = {
   bohemian: {
     name: "Bohemian Sun Journal",
     price: 28.00,
@@ -118,7 +114,6 @@ const PRODUCTS = {
   }
 };
 
-const PRODUCTS = {
   florals: {
     name: "Coquette Floral Journal",
     price: 28.00,
@@ -138,7 +133,6 @@ const PRODUCTS = {
   }
 };
 
-const PRODUCTS = {
   botanical: {
     name: "Botanical Weekly Planner",
     price: 32.00,
