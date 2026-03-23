@@ -17,7 +17,7 @@ const PRODUCTS = {
     price: 28.00,
     images: [
       "/images/fc1.png","/images/fc2.png","/images/fc3.png",
-      "/images/fc4.png","/images/fc5.png","/images/fc6.png","/images/fc7.png"
+      "/images/fc4.png","/images/fc5.png","/images/fc6.png"
     ],
     colors: [
       { name: "Bunny", image: "/images/fcp1.png" },
