@@ -11,17 +11,13 @@ window.changeImage = function(element) {
 };
 
 const PRODUCTS = {
+
   forest: {
     name: "Forest Creatures Journal",
     price: 28.00,
     images: [
-      "/images/fc1.png",
-      "/images/fc2.png",
-      "/images/fc3.png",
-      "/images/fc4.png",
-      "/images/fc5.png",
-      "/images/fc6.png",
-      "/images/fc7.png"
+      "/images/fc1.png","/images/fc2.png","/images/fc3.png",
+      "/images/fc4.png","/images/fc5.png","/images/fc6.png","/images/fc7.png"
     ],
     colors: [
       { name: "Bunny", image: "/images/fcp1.png" },
@@ -29,21 +25,15 @@ const PRODUCTS = {
       { name: "Mouse", image: "/images/fcp3.png" },
       { name: "Deer", image: "/images/fcp4.png" }
     ],
-    description: "Take notes in a whimsical way with our Forest Creatures journal. Packed with beautiful designs and simple lined pages, the freedom is yours to capture what makes your heart flutter!"
-  }
-};
+    description: "Take notes in a whimsical way with our Forest Creatures journal..."
+  },
 
   roses: {
     name: "Vintage Roses Journal",
     price: 28.00,
     images: [
-      "/images/vr1.png",
-      "/images/vr2.png",
-      "/images/vr3.png",
-      "/images/vr4.png",
-      "/images/vr5.png",
-      "/images/vr6.png",
-      "/images/vr7.png"
+      "/images/vr1.png","/images/vr2.png","/images/vr3.png",
+      "/images/vr4.png","/images/vr5.png","/images/vr6.png","/images/vr7.png"
     ],
     colors: [
       { name: "Green", image: "/images/vrp1.png" },
@@ -51,22 +41,15 @@ const PRODUCTS = {
       { name: "Brown", image: "/images/vrp3.png" },
       { name: "Beige", image: "/images/vrp4.png" }
     ],
-    description: "Take notes in a whimsical way with our Bold Wildflowers journal. Packed with beautiful designs and simple lined pages, the freedom is yours to capture what makes your heart flutter!"
-  }
-};
+    description: "Take notes in a whimsical way with our Vintage Roses journal..."
+  },
 
   birthflower: {
     name: "Birth Flower Journal",
     price: 28.00,
     images: [
-      "/images/bf1.png",
-      "/images/bf2.png",
-      "/images/bf3.png",
-      "/images/bf4.png",
-      "/images/bf5.png",
-      "/images/bf6.png",
-      "/images/bf7.png",
-      "/images/bf8.png"
+      "/images/bf1.png","/images/bf2.png","/images/bf3.png","/images/bf4.png",
+      "/images/bf5.png","/images/bf6.png","/images/bf7.png","/images/bf8.png"
     ],
     colors: [
       { name: "January", image: "/images/bfp1.png" },
@@ -80,22 +63,17 @@ const PRODUCTS = {
       { name: "September", image: "/images/bfp9.png" },
       { name: "October", image: "/images/bfp10.png" },
       { name: "November", image: "/images/bfp11.png" },
-      { name: "December", image: "/images/bfp12.png" },
+      { name: "December", image: "/images/bfp12.png" }
     ],
-    description: "Take notes in a whimsical and personal way with our Birth Flower journal. Packed with beautiful designs and simple lined pages, the freedom is yours to capture what makes your heart flutter! Plus, these make perfectly personalized bachelorette or birthday gifts for sisters, friends, or soulmates!"
-  }
-};
+    description: "Take notes in a whimsical and personal way with our Birth Flower journal..."
+  },
 
   wildflowers: {
     name: "Bold Wildflowers Journal",
     price: 28.00,
     images: [
-      "/images/wf1.png",
-      "/images/wf2.png",
-      "/images/wf3.png",
-      "/images/wf4.png",
-      "/images/wf5.png",
-      "/images/wf6.png"
+      "/images/wf1.png","/images/wf2.png","/images/wf3.png",
+      "/images/wf4.png","/images/wf5.png","/images/wf6.png"
     ],
     colors: [
       { name: "Yellow", image: "/images/wfp1.png" },
@@ -103,84 +81,65 @@ const PRODUCTS = {
       { name: "Green", image: "/images/wfp3.png" },
       { name: "Pink", image: "/images/wfp4.png" }
     ],
-    description: "Take notes in a whimsical way with our Bold Wildflowers journal. Packed with beautiful designs and simple lined pages, the freedom is yours to capture what makes your heart flutter!"
-  }
-};
+    description: "Take notes in a whimsical way with our Bold Wildflowers journal..."
+  },
 
   bohemian: {
     name: "Bohemian Sun Journal",
     price: 28.00,
     images: [
-      "/images/bs1.png",
-      "/images/bs2.png",
-      "/images/bs3.png",
-      "/images/bs4.png",
-      "/images/bs5.png",
-      "/images/bs6.png"
+      "/images/bs1.png","/images/bs2.png","/images/bs3.png",
+      "/images/bs4.png","/images/bs5.png","/images/bs6.png"
     ],
     colors: [
       { name: "Light", image: "/images/bsp1.png" },
-      { name: "Dark", image: "/images/bsp2.png" },
+      { name: "Dark", image: "/images/bsp2.png" }
     ],
-    description: "Take notes in a whimsical way with our Bohemian Sun journal. Packed with beautiful designs and simple lined pages, the freedom is yours to capture what makes your heart flutter!"
-  }
-};
+    description: "Take notes in a whimsical way with our Bohemian Sun journal..."
+  },
 
   florals: {
     name: "Coquette Floral Journal",
     price: 28.00,
     images: [
-      "/images/cf1.png",
-      "/images/cf2.png",
-      "/images/cf3.png",
-      "/images/cf4.png",
-      "/images/cf5.png",
-      "/images/cf6.png"
+      "/images/cf1.png","/images/cf2.png","/images/cf3.png",
+      "/images/cf4.png","/images/cf5.png","/images/cf6.png"
     ],
     colors: [
       { name: "Light", image: "/images/cfp1.png" },
-      { name: "Dark", image: "/images/cfp2.png" },
+      { name: "Dark", image: "/images/cfp2.png" }
     ],
-    description: "Take notes in a whimsical way with our Coquette Floral journal. Packed with beautiful designs and simple lined pages, the freedom is yours to capture what makes your heart flutter!"
-  }
-};
+    description: "Take notes in a whimsical way with our Coquette Floral journal..."
+  },
 
   botanical: {
     name: "Botanical Weekly Planner",
     price: 30.00,
     images: [
-      "/images/bp1.png",
-      "/images/bp2.png",
-      "/images/bp3.png",
-      "/images/bp4.png",
-      "/images/bp5.png",
-      "/images/bp6.png"
+      "/images/bp1.png","/images/bp2.png","/images/bp3.png",
+      "/images/bp4.png","/images/bp5.png","/images/bp6.png"
     ],
     colors: [
       { name: "Green", image: "/images/bpp1.png" },
-      { name: "Beige", image: "/images/bpp2.png" },
+      { name: "Beige", image: "/images/bpp2.png" }
     ],
-    description: "Stay organized and stylish with the Botanical Planner! With two color options, monthly calenders, book trackers, habit pages, weekly trackers, and meal plans, this 176 page planner is the perfect pocket-sized companion to bring on the go!"
-  }
-};
+    description: "Stay organized and stylish with the Botanical Planner..."
+  },
 
- academia: {
+  academia: {
     name: "Academia Weekly Planner",
     price: 30.00,
     images: [
-      "/images/ap1.png",
-      "/images/ap2.png",
-      "/images/ap3.png",
-      "/images/ap4.png",
-      "/images/ap5.png",
-      "/images/ap6.png"
+      "/images/ap1.png","/images/ap2.png","/images/ap3.png",
+      "/images/ap4.png","/images/ap5.png","/images/ap6.png"
     ],
     colors: [
       { name: "Brown", image: "/images/app1.png" },
       { name: "Pink", image: "/images/app2.png" },
       { name: "Green", image: "/images/app3.png" },
-      { name: "Blue", image: "/images/app4.png" },
+      { name: "Blue", image: "/images/app4.png" }
     ],
-    description: "Stay organized and stylish with the Academia Planner! With two color options, monthly calenders, book trackers, habit pages, weekly trackers, and meal plans, this 176 page planner is the perfect pocket-sized companion to bring on the go!"
+    description: "Stay organized and stylish with the Academia Planner..."
   }
+
 };
