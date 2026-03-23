@@ -123,7 +123,7 @@ const PRODUCTS = {
       { name: "Green", image: "/images/bpp1.png" },
       { name: "Beige", image: "/images/bpp2.png" }
     ],
-    description: "Stay organized and stylish with our weekly planner! Filled with 176 pages of adorable designs and fun trackers, this journal won't disappoint when put the test of functionality vs. aesthetic. Comes in a perfectly pocket sized 5inx7in design, with 176 pages and spiral binding."
+    description: "Stay organized and stylish with our weekly planner! Filled with 180 pages of adorable designs and fun trackers, this journal won't disappoint when put the test of functionality vs. aesthetic. Comes in a perfectly pocket sized 5inx7in design, with 180 pages and spiral binding."
   },
 
   academia: {
@@ -139,7 +139,7 @@ const PRODUCTS = {
       { name: "Green", image: "/images/app3.png" },
       { name: "Blue", image: "/images/app4.png" }
     ],
-    description: "Stay organized and stylish with our weekly planner! Filled with 176 pages of adorable designs and fun trackers, this journal won't disappoint when put the test of functionality vs. aesthetic. Comes in a perfectly pocket sized 5inx7in design, with 176 pages and spiral binding."
+    description: "Stay organized and stylish with our weekly planner! Filled with 180 pages of adorable designs and fun trackers, this journal won't disappoint when put the test of functionality vs. aesthetic. Comes in a perfectly pocket sized 5inx7in design, with 180 pages and spiral binding."
   }
 
 };
