@@ -648,12 +648,12 @@ font-size:14px;
   }
 
   .product-grid{
-    display:grid;
-    grid-template-columns:1fr;   /* stack items */
-    gap:28px;
-    width:100%;
-    max-width:340px;             /* keeps cards smaller */
-    margin:0 auto;               /* centers whole grid */
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:16px;
+  width:100%;
+  max-width:340px;
+  margin:0 auto;
   }
 
   .product-card{
