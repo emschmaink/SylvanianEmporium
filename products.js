@@ -126,8 +126,8 @@ const PRODUCTS = {
     name: "Birth Flower Monthly Planner",
     price: 38.00,
     images: [
-      "/images/bfp1.png","/images/bfp2.png","/images/bfp3.png",
-      "/images/bfp4.png","/images/bfp5.png","/images/bfp6.png"
+      "/images/fp1.png","/images/fp2.png","/images/fp3.png",
+      "/images/fp4.png","/images/fp5.png","/images/fp6.png"
     ],
     description: "Stay organized and stylish with our monthly planner! Filled with 106 pages of adorable designs and fun trackers, this journal won't disappoint when put the test of functionality vs. aesthetic. Comes in a perfectly pocket sized 6.5inx8.5in design, with hard covers and spiral binding."
   },
