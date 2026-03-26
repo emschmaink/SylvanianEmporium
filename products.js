@@ -99,7 +99,7 @@ const PRODUCTS = {
   },
 
   florals: {
-    name: "Coquette Floral Journal",
+    name: "Coquette Florals Journal",
     price: 28.00,
     images: [
       "/images/cf1.png","/images/cf2.png","/images/cf3.png",
@@ -113,33 +113,33 @@ const PRODUCTS = {
   },
 
   botanical: {
-    name: "Botanical Weekly Planner",
-    price: 30.00,
+    name: "Botanical Monthly Planner",
+    price: 38.00,
     images: [
       "/images/bp1.png","/images/bp2.png","/images/bp3.png",
       "/images/bp4.png","/images/bp5.png","/images/bp6.png"
     ],
-    colors: [
-      { name: "Green", image: "/images/bpp1.png" },
-      { name: "Beige", image: "/images/bpp2.png" }
-    ],
-    description: "Stay organized and stylish with our weekly planner! Filled with 180 pages of adorable designs and fun trackers, this journal won't disappoint when put the test of functionality vs. aesthetic. Comes in a perfectly pocket sized 5inx7in design, with 180 pages and spiral binding."
+    description: "Stay organized and stylish with our monthly planner! Filled with 106 pages of adorable designs and fun trackers, this journal won't disappoint when put the test of functionality vs. aesthetic. Comes in a perfectly pocket sized 6.5inx8.5in design, with hard covers and spiral binding."
   },
 
+  floral: {
+    name: "Birth Flower Monthly Planner",
+    price: 38.00,
+    images: [
+      "/images/bfp1.png","/images/bfp2.png","/images/bfp3.png",
+      "/images/bfp4.png","/images/bfp5.png","/images/bfp6.png"
+    ],
+    description: "Stay organized and stylish with our monthly planner! Filled with 106 pages of adorable designs and fun trackers, this journal won't disappoint when put the test of functionality vs. aesthetic. Comes in a perfectly pocket sized 6.5inx8.5in design, with hard covers and spiral binding."
+  },
+  
   academia: {
-    name: "Academia Weekly Planner",
-    price: 30.00,
+    name: "Academia Monthly Planner",
+    price: 38.00,
     images: [
       "/images/ap1.png","/images/ap2.png","/images/ap3.png",
       "/images/ap4.png","/images/ap5.png","/images/ap6.png"
     ],
-    colors: [
-      { name: "Brown", image: "/images/app1.png" },
-      { name: "Pink", image: "/images/app2.png" },
-      { name: "Green", image: "/images/app3.png" },
-      { name: "Blue", image: "/images/app4.png" }
-    ],
-    description: "Stay organized and stylish with our weekly planner! Filled with 180 pages of adorable designs and fun trackers, this journal won't disappoint when put the test of functionality vs. aesthetic. Comes in a perfectly pocket sized 5inx7in design, with 180 pages and spiral binding."
+    description: "Stay organized and stylish with our monthly planner! Filled with 106 pages of adorable designs and fun trackers, this journal won't disappoint when put the test of functionality vs. aesthetic. Comes in a perfectly pocket sized 6.5inx8.5in design, with hard covers and spiral binding."
   }
 
 };
